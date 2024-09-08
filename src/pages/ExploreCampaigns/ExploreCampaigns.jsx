@@ -5,6 +5,10 @@ import Footer from '../../components/Footer/Footer'
 
 
 const ExploreCampaign = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <>
     <div className='explore'>

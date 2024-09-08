@@ -4,6 +4,10 @@ import Footer from '../../components/Footer/Footer';
 import './Pricing.css'
 
 const Pricing = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <>
       <Header />

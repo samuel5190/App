@@ -8,6 +8,10 @@ import OurTeam from '../../components/OurTeam/OurTeam'
 
 
 const AboutUs = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <>
     <div className='about-container'>
