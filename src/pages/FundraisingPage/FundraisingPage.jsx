@@ -71,11 +71,11 @@ const FundraisingPage = () => {
     window.Korapay.initialize({
       key: import.meta.env.VITE_Public_Key,
       reference: `kindraiser_${Date.now()}`,
-      amount: amount,
+      amount: 2000,
       currency: "NGN",
       customer: {
-        name: "jack",
-        email: "jack@gmail.com",
+        name: name,
+        email: email,
       },
       onClose: function () {
       },
