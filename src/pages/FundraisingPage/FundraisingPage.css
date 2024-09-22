@@ -29,6 +29,20 @@
       font-size: 20px;
     }
   }
+
+  .donateBoxMedia {
+    display: none;
+  }
+
+@media screen and (max-width: 768px) {
+  donateBox {
+    display: none;
+  }
+
+  .donateBoxMedia {
+    display: block;
+  }
+}
   
   .fundMainContentBox {
     width: 100%;

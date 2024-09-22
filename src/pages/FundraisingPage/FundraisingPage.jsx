@@ -159,6 +159,16 @@ const FundraisingPage = () => {
                 </button>
               </div>
             </div>
+            <div className="donateBoxMedia">
+              <div className="bonateInBox">
+                <button className="fundRaiseDonateBtn" onClick={() => setPay(true)}>
+                  Donate
+                </button>
+                <button className="fundRaiseShareBtn" onClick={(e)=>setToggles(true)}>
+                  Share with friends
+                </button>
+              </div>
+            </div>
               <div className="fundRaiseTrackBox">
                 <div className="fundRaiseTrackMoney">
                   <h2>₦{loading? "...": <>{datas?.totalRaised?.toLocaleString()}</>}</h2>
