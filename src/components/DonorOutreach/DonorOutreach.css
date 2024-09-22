@@ -1,0 +1,116 @@
+/* General styles */
+.donor-outreach {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-left: 50px;
+  max-width: 100%; 
+  box-sizing: border-box; 
+}
+
+.donor-outreach-wrapper {
+  height: auto;
+  margin-top: 5%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  width: 90%;
+  max-width: 100%; 
+}
+
+.donor-outreach-image {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.donor-outreach-text {
+  flex: 1;
+  padding: 20px;
+  margin-bottom: 0;
+}
+
+.donor-outreach-text h1 {
+  font-family: Proxima Nova, sans-serif;
+  margin-bottom: 40px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 58.46px;
+  text-align: left;
+}
+
+.donor-outreach-text span {
+  color: #05CE78;
+}
+
+.donor-outreach-text p {
+  font-family: Proxima Nova, sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 43.85px;
+  text-align: left;
+}
+
+.donor-outreach-img {
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 0;
+}
+
+/* Media query for mobile screens (max width 768px) */
+@media (max-width: 768px) {
+  .donor-outreach-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .donor-outreach-image,
+  .donor-outreach-text {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .donor-outreach-text h1 {
+    font-size: 27px; 
+    line-height: 48px;
+    text-align: left;
+  }
+
+  .donor-outreach-text p {
+    font-size: 20px; 
+    line-height: 32px;
+    text-align: left;
+  }
+
+  .donor-outreach {
+    margin-left: 0; 
+    padding: 10px;
+  }
+}
+
+/* Media query for 2K screens (2560px width) */
+@media (min-width: 2560px) {
+  .donor-outreach-text h1 {
+    font-size: 60px;
+    line-height: 72px;
+  }
+
+  .donor-outreach-text p {
+    font-size: 30px;
+    line-height: 50px;
+  }
+}
+
+/* Media query for 4K screens (3840px width) */
+@media (min-width: 3840px) {
+  .donor-outreach-text h1 {
+    font-size: 72px;
+    line-height: 85px;
+  }
+
+  .donor-outreach-text p {
+    font-size: 36px;
+    line-height: 60px;
+  }
+}

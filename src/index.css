@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+  
+  
+  :root {
+    --main-green: #049255;
+    --main-blue: #448AFF;
+    --black-out: #0B1215;
+    --white: #FFFFFF;
+    --main-font: arial, helvetica;
+    --sea-weed-green: #05BB6D;
+    --sky-dancer: #37D893;
+    /* --sky-blue: #448AFF; */
+  
+    
+  }

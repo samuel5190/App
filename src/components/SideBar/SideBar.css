@@ -1,0 +1,150 @@
+.sideBarBody {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    padding: 5px;
+    color: Black;
+  }
+  
+  .logOut {
+    height: 40px;
+    border-radius: 4px;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+  
+    &:hover {
+      background-color: rgba(211, 211, 211, 0.171);
+    }
+  }
+  
+  .HeaderActive {
+    /* border-radius: 4px; */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    height: 40px;
+    width: 100%;
+    gap: 15px;
+    display: flex;
+    padding: 10px;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: rgb(7, 212, 7);
+    /* border-radius: 10px; */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .end {
+    margin-top: 80px;
+  }
+  
+  .HeaderNotActive {
+    height: 40px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    align-items: center;
+    /* border-radius: 10px; */
+    text-decoration: none;
+    color: Black;
+  
+    &:hover {
+      background-color: rgba(211, 211, 211, 0.171);
+    }
+  }
+  
+  .sideBarWrapper {
+    /* width: ; */
+    padding-left: 30px;
+    margin-top: 15px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+  }
+  
+  .logo {
+    height: 40px;
+    max-width: 200px;
+    width: 100%;
+    padding-right: 5px;
+    display: flex;
+    align-items: center;
+    border-right: 5px;
+    /* background-color: red; */
+    margin-bottom: 45px;
+    flex-direction: column;
+  
+    img {
+      height: 100%;
+      width: 100%;
+    }
+    
+  }
+  
+  .imgFull {
+  
+  }
+  
+  .logoSmall {
+    height: 40px;
+    width: 40px;
+    display: none;
+    /* background-color: green; */
+  }
+  
+  .navSide {
+    height: 100%;
+    /* background-color: blue; */
+  }
+  
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .HeaderActive {
+      
+      span {
+        display: none;
+      }
+    }
+  
+    .sideBarWrapper {
+      padding-left: 15px;
+    }
+  
+    .logoSmall{
+      display: block;
+    }
+  
+    /* .logo {
+  
+      .full {
+        display: none;
+      }
+    } */
+  
+    .imgFull {
+      display: none;
+    }
+    .HeaderNotActive {
+  
+      span {
+        display: none;
+      }
+    }
+  }
+  

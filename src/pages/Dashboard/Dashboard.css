@@ -1,0 +1,438 @@
+.dashboardBody {
+  height: 90vh;
+  width: 100%;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.progBar {
+  height: 10px;
+  width: 100%;
+  /* height: 20px;
+  width: 0;
+  background-color: red;
+  background-color: #4CAF50; */
+  /* animation: progress 2s infinite; */
+}
+.pageName {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.dash {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.dashNameBtnHolder {
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  height: max-content;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+
+.dashboardContent {
+  height: max-content;
+  /* background-color: turquoise; */
+  width: 100%;
+  display: flex;
+  margin-bottom: 30px;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.dashBoardUpperCard {
+  height: max-content;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  /* background-color: green; */
+  justify-content: center;
+  /* align-items: center; */
+  /* flex-wrap: wrap; */
+}
+
+.dashboardSmallCard {
+  height: 150px;
+  width: 100%;
+  min-width: 120px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 10px;
+  padding-left: 15px;
+  padding-top: 25px;
+}
+
+.dashBoardCardUpper {
+  height: 70%;
+  width: 100%;
+  /* background-color: aqua; */
+}
+
+.upperCardMainText {
+  /* color: rgb(10, 158, 10); */
+  font-size: 25px;
+}
+
+.one{
+  color: green;
+}
+
+.two {
+  color: rgb(210, 210, 35);
+}
+
+.three {
+  color: orange;
+}
+
+.four {
+  color: blue;
+}
+.cardSmallText {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(54, 54, 102);
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+}
+
+.iconCircle {
+  height: 30px;
+  width: 30px;
+  /* color: gray; */
+  background-color: rgba(163, 163, 163, 0.33);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upperCardSubText {
+  color: gray;
+  font-size: 20px;
+  /* color: rgb(78, 78, 239); */
+}
+
+.contactBox {
+  /* background-color: red; */
+  display: flex;
+  /* height: max-content; */
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  flex-wrap: wrap;
+
+  .contacts-list {
+    width: 400px;
+    min-width: 100px;
+    background-color: white;
+  }
+}
+
+.details-container {
+  /* background-color: red; */
+  width: 100%;
+}
+
+.dashBoardCardLower {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: red; */
+}
+
+@media screen and (max-width: 640px) {
+  .dashBoardUpperCard {
+    flex-wrap: wrap;
+  }
+
+  .dashboardSmallCard {
+    min-width: 240px;
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+
+  .dashboardSmallCard {
+    width: 240px;
+  }
+  .dashBoardUpperCard {
+    overflow-x: scroll;
+    height: 200px;
+    flex-direction: column;
+  }
+}
+
+
+.dashBoardLowerCard {
+  height: max-content;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  gap: 20px;
+  /* flex-wrap: wrap; */
+}
+
+.fundraisingDashboardBox {
+  background-color: white;
+  /* background-color: green; */
+  height: max-content;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 10px;
+  display: flex;
+  border: 1px solid lightgray;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+}
+
+.fundraiseDashHead {
+  height: 50px;
+  width: 100%;
+  /* background-color: rgb(88, 49, 49); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fundraiseDashBody {
+  height: max-content;
+  width: 100%;
+  /* background-color: rgb(123, 123, 151); */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fundRaiseTrackBox {
+  height: 35%;
+  width: 100%;
+  /* background-color: green; */
+}
+
+.fundraiseFrameBox {
+  height: 70%;
+  width: 100%;
+  /* background-color: blue; */
+  display: flex;
+  gap: 10px;
+}
+
+.fundRaiseFrameImgBox {
+  height: 80px;
+  width: 80px;
+  border-radius: 10px;
+  /* background-color: aqua; */
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.fundRaiseFrameText {
+  height: 80px;
+  max-width: 300px;
+  width: 100%;
+  /* background-color: aqua; */
+}
+
+.trackBar {
+  height: 15px;
+  width: 100%;
+  background-color: greenyellow;
+}
+
+.fundRaiseDashCard {
+  height: 125px;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+}
+
+.fundraiseAmountTrack {
+ display: flex;
+ justify-content: space-between;
+ align-items: center; 
+
+ span {
+  color: gray;
+  font-size: 14px;
+ }
+}
+
+.recentDonorsHistory {
+  height: max-content;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  display: flex;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  /* gap: 10px; */
+}
+
+.donationHistoryPersonBox {
+  height: 300px;
+  /* background-color: aqua; */
+  width: 55%;
+  /* width: 400px; */
+  border-right: 1px solid lightgray;
+}
+
+.donorHistoryHead {
+  height: 15%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.donorHistoryPeople {
+  height: 85%;
+  /* background-color: green; */
+  display: flex;
+  overflow-y: auto;
+  flex-direction: column;
+  /* scrollbar-width: 5px; */
+}
+
+.progress-containerDash {  
+  width: 100%; /* w-full */  
+  /* background-color: #E2E8F0; bg-gray-300   */
+  border-radius: 9999px; /* rounded-full */  
+  height: 15px;  
+} 
+
+.donateBoxMedia {
+  display: none;
+}
+
+
+.progress-barDash {  
+  background-color: #05BB6D; /* bg-blue-600 */  
+  height: 100%; /* h-full */  
+  border-radius: 9999px; /* rounded-full */  
+  transition: width 0.3s ease;  
+} 
+
+.trackBoxDash {
+  height: max-content;
+  width: 100%;
+  /* background-color: blue; */
+}
+.small {
+  height: 15px;
+  /* background-color: red; */
+}
+
+.donorPeople {
+  width: 100%;
+  cursor: pointer;
+  border-bottom: 1px solid lightgray;
+  background-color: rgb(234, 234, 234);
+  min-height: 90px;
+  max-height: 90px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: rgb(188, 188, 188);
+  }
+}
+
+.donationHistoryPersonShow {
+  height: 300px;
+  /* background-color: red; */
+  width: 45%;
+  padding: 20px;
+}
+
+.barChart {
+  height: 340px;
+  width: 100%;
+  /* min-width: 300px; */
+  background-color: white;
+  border: 1px solid lightgray;
+  /* background-color: black; */
+  border-radius: 10px;
+}
+
+@media screen and (max-width:880px) {
+  .dashBoardLowerCard {
+    flex-direction: column;
+  }
+
+  .recentDonorsHistory {
+    flex-direction: column;
+
+    div {
+      width: 100%;
+    }
+  }
+
+  
+}
+
+
+.contacts-container {  
+  display: flex;  
+  width: 100%;  
+}  
+ 
+
+ 
+
+.contacts-list {  
+  flex: 1;  
+  /* background-color: red; */
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 20px; /* Adjust as needed */  
+  max-height: 400px; /* Optional: set a max height */  
+  overflow-y: auto; /* Enable scrolling if content is too long */  
+}  
+
+.person-item {  
+  padding: 10px;  
+  border-bottom: 1px solid #ccc;  
+  margin-bottom: 10px;  
+  cursor: pointer;  
+  transition: background-color 0.2s;  
+}  
+
+.person-item:hover {  
+  background-color: #f0f0f0; /* Highlight on hover */  
+}  
+
+.details-container {  
+  width: 300px; /* Adjust width as needed */  
+  padding: 10px;  
+  /* background-color: ; */
+  /* border-left: 1px solid #ccc; Optional: to separate details   */
+}  
+
+.details {  
+  /* background-color: #f9f9f9; Optional: background for details   */
+  padding: 10px;  
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  border-radius: 5px;  
+}
+
+.donationHistoryBox {
+  /* background-color: red; */
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}

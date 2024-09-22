@@ -1,0 +1,97 @@
+.payoutModalBody {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.248);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .payoutModalWrapper {
+    width: 30%;
+    height: max-content;
+    min-width: 350px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  
+  }
+  
+  .payoutModalHead {
+    height: max-content;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+  
+  .payoutModalInputHolder {
+    height: max-content;
+    /* width: 100%; */
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    gap: 10px;
+  }
+  
+  .payoutModalInputBox {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    /* height: 50px; */
+    gap: 10px;
+  
+    span {
+      font-weight: bold;
+      font-size: 15px;
+    }
+  
+    select {
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid lightgray;
+      outline: none;
+      padding-left: 10px;
+    }
+  
+    input {
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid lightgray;
+      outline: none;
+      padding-left: 10px;
+    }
+  }
+  
+  .payoutModalBtnBox {
+    height: max-content;
+    /* background-color: red; */
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  
+    button {
+      background-color: #05BB6D;
+      color: white;
+      border-radius: 10px;
+      border: none;
+      height: 40px;
+      width: 100px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #4bd197;
+      }
+    }
+  }

@@ -1,0 +1,121 @@
+.aboutBody {
+  height: max-content;
+  background-color: var(--white);
+  padding: 20px 30px 20px 30px;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  section {
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  hr {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    /* background-color: red; */
+    border:1px solid lightgray;
+  }
+}
+
+.aboutAddressBox {
+  height: max-content;
+  /* background-color: red; */
+  display: flex;
+  max-width: 600px;
+  width: 100%;
+  gap: 30px;
+
+  input {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.aboutLogoBox {
+  height: 150px;
+  width: 150px;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.logoHolderAbout {
+  height: max-content;
+  width: max-content;
+  position: relative;
+  top: 0;
+  left: 0;
+  span {
+    font-size: 20px;
+    position: absolute;
+  }
+}
+
+.aboutLogoContainer {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bolder;
+  cursor: pointer;
+
+
+}
+
+.aboutOrgNameInputBox {
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+  gap: 5px;
+  /* margin-bottom: 10px; */
+  /* background-color: red; */
+
+  input {
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    outline: none;
+    padding-left: 20px;
+  }
+
+  textarea {
+    height: 300px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    outline: none;
+    padding: 20px;
+  }
+}
+
+.aboutSaveBtnBox {
+  width: 100%;
+  /* background-color: red; */
+  height: max-content;
+  display: flex;
+  justify-content: flex-end;
+
+  .aboutSaveBtn {
+    height: 40px;
+    width: 80px;
+    padding: 10px;
+    background-color: var(--main-green);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,36 @@
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    border: none;
+    outline: none;
+    margin-bottom: 10%;
+
+}
+
+.search-input {
+    padding: 10px;
+    border: 0.8px solid #049255; 
+    border-radius: 4px 0 0 4px;
+    width: 700px;
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    border: 0.8px solid #049255;
+    border-left: none;
+    background-color: #049255;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    outline: none; 
+}
+
+button i {
+    font-size: 16px;
+}
+
+.filter {
+    font-size: 18px;
+}

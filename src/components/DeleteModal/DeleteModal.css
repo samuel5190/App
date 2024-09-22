@@ -1,0 +1,85 @@
+.deleteModalBody {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.293);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deleteModalWrapper {
+  height: max-content;
+  background-color: rgb(255, 255, 255);
+  max-width: 450px;
+  min-width: 300px;
+  width: 390px;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 20px;
+}
+
+.deleteModLHead {
+  height: 14%;
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  div {
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
+.deleteCancleBtn {
+  height: 25px;
+  width: 25px;
+  background-color: rgba(136, 227, 227, 0.518);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.delectErrMessage {
+  margin-top: -19px;
+  font-size: 14px;
+  color: red;
+}
+.deleteInputBox {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+
+  input {
+    width: 80%;
+    height: 40px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding-left: 10px;
+  }
+  
+  button {
+    background-color: rgba(255, 0, 0, 0.492);
+    width: 20%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: red;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.fundModalBody {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.401);
+}
+
+.fundModalWrapper {
+  height: 60%;
+  width: 60%;
+  padding: 20px;
+  min-width: 350px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.fundModalHeader {
+  height: 20px;
+  /* background-color: red; */
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+
+  span {
+    cursor: pointer;
+  }
+}

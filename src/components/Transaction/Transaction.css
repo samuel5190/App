@@ -1,0 +1,102 @@
+
+
+.table-containerTransaction {  
+  overflow-x: auto;
+  /* border-radius: 10px;   */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px solid lightgray;
+  height: 450px;
+  background-color: white; 
+}  
+
+.transactionSearchSide {
+  height: max-content;
+  align-items: center;
+  width: 100%;
+  /* background-color: red; */
+  gap: 20px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+
+.SearchSideTransaction {
+  height: max-content;
+  width: max-content;
+  /* background-color: aqua; */
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.searchBox {
+  height: 30px;
+  padding-left: 10px;
+  width: 230px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgray;
+
+  input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding-left: 5px;
+  }
+}
+
+.campaign-table {  
+  width: 100%;  
+  border-collapse: collapse;  
+  background-color: #f0f0f0; /* Similar to bg-gray-200 */  
+  /* background-color: red; */
+  /* height: 300px; */
+}  
+
+.tableFooterPagination {
+  height: 50px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-top: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.table-header {  
+  background-color: #d0d0d0; /* Similar to bg-gray-300 */ 
+}  
+
+.table-header-cell {  
+  padding: 10px;  
+  text-align: left;  
+  border: 1px solid #ccc; 
+}  
+
+
+
+.table-row {  
+  background-color: whitesmoke; /* White background for rows */  
+  /* background-color: red;  */
+  max-height: 50px;
+  height: 50px;
+  /* margin-bottom: 20px; */
+}  
+
+.table-cellNow {  
+  cursor: pointer;
+  padding: 10px;  
+  background-color: white;
+  /* background-color: red; */
+  /* border: 1px solid #ccc;   */
+}

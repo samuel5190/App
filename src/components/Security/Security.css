@@ -1,0 +1,68 @@
+.securityBody {
+    height: max-content;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: 1px solid lightgray;
+    padding: 30px 20px 30px 20px;
+  
+    aside {
+      color: var(--main-green);
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  }
+  
+  .securityEmailBox {
+    height: max-content;
+    min-height: 70px;
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* background-color: red; */
+  }
+  
+  .securityEmailWrapper {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  
+    div {
+      font-weight: bold;
+    }
+  
+    span {
+      color: rgb(184, 184, 184);
+    }
+  }
+  
+  .securityPasswordBox {
+    height: 70px;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* align-items: ; */
+    /* background-color: red; */
+  }
+  
+  .securityPasswordWrapper {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  
+    div {
+      font-weight: bold;
+    }
+  
+  }

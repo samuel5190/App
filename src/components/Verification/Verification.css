@@ -1,0 +1,97 @@
+.verificationBody {
+  height: max-content;
+  background-color: white;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding: 20px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.verificationBenefits {
+  
+  div {
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  ul {
+    padding-left: 30px;
+    line-height: 20px;
+
+    li {
+      font-size: 13px;
+    }
+  }
+}
+
+.verifyNumBox {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  input {
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    outline: none;
+    padding-left: 10px;
+  }
+}
+
+.verificationEmailBox {
+  height: 250px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.verificationEmailHead {
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  span {
+    color: red;
+  }
+}
+
+.verifyEmailMessage {
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+.verifyNumBtnBox {
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  p {
+    font-size: 13px;
+  }
+}
+
+.verityBtnEmail {
+  background-color: var(--main-green);
+  border: none;
+  height: 45px;
+  width: max-content;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}

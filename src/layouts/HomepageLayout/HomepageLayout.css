@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.landingpage-container{
+    height: auto;
+    width: auto;
+}
+
+body {
+    overflow: auto; 
+  }
+  
+  body::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  body {
+    -ms-overflow-style: none; 
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+  }
+  
+  .landingpage-container {
+    width: 100%;
+    overflow-x: auto; 
+    box-sizing: border-box; 
+    background-color: #E6FAF2 !important;
+
+  }
+  
+  .not-coloured-nav{
+    background-color: white;
+  }
