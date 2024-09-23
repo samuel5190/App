@@ -19,7 +19,7 @@ const MoreCampaigns = () => {
   const [searchTerm, setSearchTerm] = useState(""); // State for search term  
   const navigate = useNavigate();  
   const dispatch = useDispatch(); 
-  const Nav = useNavigate()
+  // const Nav = useNavigate()
 
     
   useEffect(() => {  
@@ -38,6 +38,7 @@ const MoreCampaigns = () => {
     axios  
       .get(url)  
       .then((res) => {  
+        console.log(res?.data?.allCampaigns)
         console.log(res?.data?.allCampaigns, "all campaigns");  
         setCampaigns(res?.data?.allCampaigns);  
         // dispatch(allCampaigns(res?.data?.allCampaigns));  
@@ -73,7 +74,7 @@ const MoreCampaigns = () => {
         <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
       </div>  
 
-      <div className="campaign-container" onClick={()=>Nav(`https://kindraiseweb.vercel.app/fundraising-page/${ev}`)}>  
+      <div className="campaign-container">  
         {filteredCampaigns.slice(0, visibleCount).map((Mcampaign) => {  
             const percent = (Mcampaign.totalRaised / Mcampaign.Goal) * 100;  
           return (  
@@ -81,14 +82,16 @@ const MoreCampaigns = () => {
               className="Mcampaigns-card"  
               key={Mcampaign.id}  
               data-aos="fade-up"  
+              
             >  
               <img  
                 src={Mcampaign.profilePic}  
                 alt={Mcampaign.story}  
                 className="Mcampaigns-image"  
+                onClick={()=>navigate(`/fundraising-page/${Mcampaign.ev}`)}
               />  
               <div className="Mcampaigns-info">  
-                <h2 className="Mcampaigns-title">{Mcampaign.story}</h2>  
+                <h2 className="Mcampaigns-title">{Mcampaign.title}</h2>  
                 <p className="Mcampaigns-description">{Mcampaign.subtitle}</p>  
                 <p className="Mcampaigns-donors">  
                   {Mcampaign.supporters} Donors  
