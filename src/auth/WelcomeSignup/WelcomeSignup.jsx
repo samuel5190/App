@@ -22,9 +22,12 @@ const WelcomeSignup = ({setActiveSignupPage}) => {
         loading ? <Loading/>:null
       }
       <div className='welcomesignupBox'>
-        <h2>Welcome!</h2>
+        <h2>Please verify your email</h2>
         <div>
-          We are glad to have you, verify your account to get started.
+        You’re almost there! We sent you an email.
+        </div>
+        <div>
+        Just click on the link in that email to complete your sign up If you didn’t see it, you may need to <span>check your spam</span> folder.
         </div>
         {/* <button className='welcomeBtnDashboard' onClick={moveBtn}>
           Go To Dashboard
