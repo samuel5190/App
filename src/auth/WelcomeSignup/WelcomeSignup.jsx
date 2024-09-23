@@ -7,15 +7,15 @@ const WelcomeSignup = ({setActiveSignupPage}) => {
   const Nav = useNavigate()
   const [loading, setLoading] =useState(false)
 
-  const moveBtn=()=>{
+  // const moveBtn=()=>{
 
-    setLoading(!loading)
-    setTimeout(()=>{
-      setLoading(false)
-      // setActiveSignupPage("A")
-      Nav('/login')
-    },3000)
-  }
+  //   setLoading(!loading)
+  //   setTimeout(()=>{
+  //     setLoading(false)
+  //     // setActiveSignupPage("A")
+  //     Nav('/login')
+  //   },3000)
+  // }
   return (
     <div className='welcomeSignupPage'>
       {
