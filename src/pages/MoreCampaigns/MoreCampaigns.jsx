@@ -19,7 +19,6 @@ const MoreCampaigns = () => {
   const [searchTerm, setSearchTerm] = useState(""); // State for search term  
   const navigate = useNavigate();  
   const dispatch = useDispatch(); 
-  // const Nav = useNavigate()
 
     
   useEffect(() => {  
@@ -89,6 +88,7 @@ const MoreCampaigns = () => {
                 alt={Mcampaign.story}  
                 className="Mcampaigns-image"  
                 onClick={()=>navigate(`/fundraising-page/${Mcampaign.ev}`)}
+
               />  
               <div className="Mcampaigns-info">  
                 <h2 className="Mcampaigns-title">{Mcampaign.title}</h2>  
