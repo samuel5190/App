@@ -52,7 +52,7 @@ const Contacts = () => {
   const handleRowClick = (person) => {  
     console.log(person);  
     // Navigate to the donor details page  
-    Nav('/donor/details', { state: { person } }); // Pass person data as state  
+    Nav('/track/details', { state: { person } }); // Pass person data as state  
   };  
 
   const {  

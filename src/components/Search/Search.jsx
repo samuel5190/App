@@ -20,7 +20,7 @@ const Search = ({setSearchTerm,searchTerm}) => {
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search..."
           />
-          <button onClick={handleSearch}>
+          <button className='searchBtn' onClick={handleSearch}>
             <i className="fas fa-search"></i>
           </button>
         </div>

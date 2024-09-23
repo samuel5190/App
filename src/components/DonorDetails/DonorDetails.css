@@ -165,3 +165,110 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+.persiceDetailsBody {
+  height: 90vh;
+  width: 100%;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  /* background-color: red; */
+}
+
+.preciseDetailsHead {
+  /* background-color: green; */
+  font-size: 18px;
+  display: flex;
+  cursor: pointer;
+  gap: 9px;
+}
+
+.preciseDetailsBox {
+/* background-color: rgb(40, 235, 40); */
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.preciseDetailsName {
+  font-size: 25px;
+  /* font-weight: bold; */
+}
+
+.preciseMoreBox {
+  height: max-content;
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.preEmailSendBox {
+  height: 350px;
+  width: 40%;
+  padding: 15px;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  background-color: white;
+  flex-direction: column;
+  gap: 5px;
+  /* color: white; */
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+.preDetailsDataBox {
+  width: 60%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+  border: 1px solid lightgray;
+}
+
+.botmLine {
+  height: 1px;
+  background-color: rgb(240, 233, 233);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.sendEmailBox {
+  
+  textarea {
+    border: 1px solid rgb(198, 196, 196);
+    padding: 10px;
+    border-radius: 5px;
+    height: 200px;
+    width: 100%;
+    /* height: 100%; */
+    /* border: none; */
+    outline: none;
+  }
+  /* background-color: red; */
+}
+
+.preEmailBtnBox {
+  height: max-content;
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  
+  button {
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    width: 80px;
+    cursor: pointer;
+    height: 40px;
+    color: white;
+    background-color: #05BB6D;
+    
+  }
+
+}

@@ -16,7 +16,7 @@
     outline: none;
 }
 
-button {
+.searchBtn {
     padding: 10px;
     border: 0.8px solid #049255;
     border-left: none;
@@ -27,7 +27,7 @@ button {
     outline: none; 
 }
 
-button i {
+.searchBtn i {
     font-size: 16px;
 }
 
