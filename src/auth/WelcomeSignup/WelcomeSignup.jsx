@@ -13,7 +13,7 @@ const WelcomeSignup = ({setActiveSignupPage}) => {
     setTimeout(()=>{
       setLoading(false)
       // setActiveSignupPage("A")
-      Nav('/dashboard')
+      Nav('/login')
     },3000)
   }
   return (
@@ -26,9 +26,9 @@ const WelcomeSignup = ({setActiveSignupPage}) => {
         <div>
           We are glad to have you, verify your account to get started.
         </div>
-        <button className='welcomeBtnDashboard' onClick={moveBtn}>
+        {/* <button className='welcomeBtnDashboard' onClick={moveBtn}>
           Go To Dashboard
-        </button>
+        </button> */}
       </div>
     </div>
   )
