@@ -13,6 +13,10 @@
   justify-content: flex-end;
   padding-right: 20px; 
   cursor: pointer;
+
+  span {
+    color: var(--main-green);
+  }
 }
 
 .signupUserSelectBox {

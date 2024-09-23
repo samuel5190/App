@@ -97,7 +97,7 @@ const NpoSignup = ({ setActiveSignupPage }) => {
     <>
       <div className='npoSignUpBody'>
         <div className='signupLoginBox'>
-          Already have an account?<span onClick={() => setActiveSignupPage('/')}> Sign in</span>
+          Already have an account? <span onClick={() => setActiveSignupPage('/')}> Sign in</span>
         </div>
         <div className='indSignupInputBox'>
           <h1 className='indSignupQusBox'>Tell us about yourself</h1>
