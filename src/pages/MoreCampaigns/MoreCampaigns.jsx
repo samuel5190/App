@@ -80,12 +80,13 @@ const MoreCampaigns = () => {
               className="Mcampaigns-card"  
               key={Mcampaign.id}  
               data-aos="fade-up"  
-                onclick={()=>Nav(`https://kindraiseweb.vercel.app/fundraising-page/${ev}`)}
+{/*                 onclick={()=>Nav(`https://kindraiseweb.vercel.app/fundraising-page/${ev}`)} */}
             >  
               <img  
                 src={Mcampaign.profilePic}  
                 alt={Mcampaign.story}  
                 className="Mcampaigns-image"  
+                  onClick={()=>navigate(`/fundraising-page/${Mcampaign.ev}`)}
               />  
               <div className="Mcampaigns-info">  
                 <h2 className="Mcampaigns-title">{Mcampaign.story}</h2>  
