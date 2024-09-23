@@ -19,6 +19,7 @@ const MoreCampaigns = () => {
   const [searchTerm, setSearchTerm] = useState(""); // State for search term  
   const navigate = useNavigate();  
   const dispatch = useDispatch(); 
+  const Nav = useNavigate()
 
     
   useEffect(() => {  
@@ -71,7 +72,7 @@ const MoreCampaigns = () => {
         <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
       </div>  
 
-      <div className="campaign-container">  
+      <div className="campaign-container" onClick={()=>Nav(`https://kindraiseweb.vercel.app/fundraising-page/${ev}`)}>  
         {filteredCampaigns.slice(0, visibleCount).map((Mcampaign) => {  
             const percent = (Mcampaign.totalRaised / Mcampaign.Goal) * 100;  
           return (  
