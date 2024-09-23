@@ -111,6 +111,7 @@ const DashBoard = () => {
   const [loading, setLoading] = useState(false);
   const [test, setTest] = useState(null);
   const [totalRaised, setTotalRaised] = useState(0)
+  const [monthly, setMonthly] = useState()
 
   const fetchAll = async()=>{
       try{
@@ -123,7 +124,7 @@ const DashBoard = () => {
         const res = await axios.get(url, { headers })
         setCampaign(res?.data?.allCampaigns)
         // console.log(campaign)
-        console.log(res, "res")
+        setMonthly(res?.data?.monthlyDonations)
         setTotalRaised(res?.data?.totalRaisedFromAllCampaigns)
         // toast.success(res?.data?.message)
         dispatch(myCampaigns(res?.data?.allCampaigns))
@@ -365,8 +366,8 @@ const DashBoard = () => {
           <div className="dashBoardLowerCard">
             <div className="barChart">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={products}>
-                  <XAxis dataKey="name" />
+                <BarChart data={monthly}>
+                  <XAxis dataKey="month" />
                   <YAxis />
                   <Tooltip />
                   <Bar
@@ -374,7 +375,7 @@ const DashBoard = () => {
                     type="monotone"
                     stroke="#0042d1"
                     fill="#4d77e1"
-                    dataKey="donor"
+                    dataKey="amount"
                     barSize={20} // Adjust this value to make bars thinner or thicker
                   />
                 </BarChart>
