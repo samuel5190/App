@@ -71,7 +71,7 @@ const FundraisingPage = () => {
     window.Korapay.initialize({
       key: import.meta.env.VITE_Public_Key,
       reference: `kindraiser_${Date.now()}`,
-      amount: 2000,
+      amount: amount,
       currency: "NGN",
       customer: {
         name: name,
@@ -136,6 +136,7 @@ const FundraisingPage = () => {
             setPay={setPay}
           />
         )}
+        
         <div className="fund-head">
           <Header />
         </div>
