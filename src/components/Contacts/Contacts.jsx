@@ -12,12 +12,15 @@ const Contacts = () => {
 
   const persons = [  
     { name: "Alice", amount: 25, date: "22/03/2024", campaign: "Save the tree",   
-      message: "I’m so proud to be a changemaker. #Love", email: "jacksam@gmail.com",   
-      contribution: "1,000", contact_since: "22/03/2024" },  
-    { name: "Bob", amount: 30, date: "22/03/2024", campaign: "Save the tree",   
       message: "I’m so proud to be a changemaker. #Love", email: "alice@gmail.com",   
       contribution: "1,000", contact_since: "22/03/2024" },  
+    { name: "Bob", amount: 30, date: "22/03/2024", campaign: "Save the tree",   
+      message: "I’m so proud to be a changemaker. #Love", email: "bobby@gmail.com",   
+      contribution: "1,000", contact_since: "22/03/2024" },  
     { name: "Charlie", amount: 22, date: "22/03/2024", campaign: "Save the tree",   
+      message: "I’m so proud to be a changemaker. #Love", email: "joeDoe@gmail.com",   
+      contribution: "1,000", contact_since: "22/03/2024" },  
+    { name: "john", amount: 22, date: "22/03/2024", campaign: "Save the tree",   
       message: "I’m so proud to be a changemaker. #Love", email: "joeDoe@gmail.com",   
       contribution: "1,000", contact_since: "22/03/2024" },  
   ];  
