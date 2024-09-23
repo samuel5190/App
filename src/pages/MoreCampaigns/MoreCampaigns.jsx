@@ -80,7 +80,6 @@ const MoreCampaigns = () => {
               className="Mcampaigns-card"  
               key={Mcampaign.id}  
               data-aos="fade-up"  
-{/*                 onclick={()=>Nav(`https://kindraiseweb.vercel.app/fundraising-page/${ev}`)} */}
             >  
               <img  
                 src={Mcampaign.profilePic}  
