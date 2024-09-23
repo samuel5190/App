@@ -30,6 +30,7 @@ const MoreCampaigns = () => {
     });  
   }, []);  
 
+  
   useEffect(() => {  
     const url = "https://kindraise.onrender.com/api/v1/getallcampaigns";  
 
