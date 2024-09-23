@@ -95,6 +95,10 @@
     /* position: fixed; */
     top: 0;
   }
+
+  .mediaWeb {
+    display: none;
+  }
   
   .bonateInBox {
     width: 100%;
@@ -103,6 +107,7 @@
     padding: 20px;
     display: flex;
     justify-content: center;
+    /* display: none; */
     flex-direction: column;
     gap: 30px;
     /* margin-top: 20px; */

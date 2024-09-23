@@ -150,7 +150,7 @@ const FundraisingPage = () => {
               <div className="fundContentInBox">
                 <img src={datas?.profilePic} alt="pic" />
               </div>
-              <div className="donateBox">
+              <div className="donateBox mediaWeb">
               <div className="bonateInBox">
                 <button className="fundRaiseDonateBtn" onClick={() => setPay(true)}>
                   Donate

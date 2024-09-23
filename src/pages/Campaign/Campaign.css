@@ -5,6 +5,15 @@
   padding: 20px;
 }
 
+.editor {
+  height: max-content;
+  width: max-content;
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+  background-color: lightgray;
+  /* gap: 10px; */
+}
 tr {
   border-left: none;
 }

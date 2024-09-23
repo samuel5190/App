@@ -78,17 +78,17 @@ const Campaign = () => {
             ...
           </button>
           {selectedRowIndex === row.index && (
-            <div
-              style={{
-                position: "absolute",
-                background: "white",
-                border: "1px solid #ccc",
-                padding: "10px",
-              }}
+            <div className="editor"
+              // style={{
+              //   position: "absolute",
+              //   background: "white",
+              //   border: "1px solid #ccc",
+              //   padding: "10px",
+              // }}
             >
-              <button onClick={() => handleAction("Edit", row.original.ev)}>
+              {/* <button onClick={() => handleAction("Edit", row.original.ev)}>
                 Edit
-              </button>
+              </button> */}
               <button onClick={() => handleAction("View", row.original.ev)}>
                 View
               </button>
