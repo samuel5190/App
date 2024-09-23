@@ -41,12 +41,12 @@ const Signup = () => {
       <div className="signup-container">
         <div className="signup-inner">
           <div className="signupBackArrow">
-            {activeSignupPage === "A" ? null : (
+            {/* {activeSignupPage === "A" || "D" ? null : (
               <span onClick={() => setActiveSignupPage("A")}>
                 <BiArrowBack style={{ marginRight: '8px' }} />
                 Back
               </span>
-            )}
+            )} */}
           </div>
           <div className="signupLogoBox">
             <img src={Logo} alt="Logo" onClick={() => setActiveSignupPage("A")} />
