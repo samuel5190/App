@@ -11,8 +11,9 @@ const FundModal = ({setToggles}) => {
   const {id} = useParams()
 
 
+  
   // const Nav = useNavigate()
-  const [link, setLink] = useState(`https://app-one-sand.vercel.app/fundraising-page/${id}`);
+  const [link, setLink] = useState(`https://kindraiseweb.vercel.app/fundraising-page/${id}`);
   const qrRef = useRef();
   const [num, setNum] = useState();
   const handleDownload = () => {  

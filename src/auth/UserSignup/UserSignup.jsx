@@ -34,7 +34,7 @@ const UserSignup = ({setActiveSignupPage}) => {
         </div> */}
       </div>
       <div className='mediaSignupLoginBox'>
-        Already have an account?<span onClick={()=>Nav('/')}>Sign in</span>
+        Already have an account?<span onClick={()=>Nav('/login')}>Log in</span>
       </div>
     </div>
   )
