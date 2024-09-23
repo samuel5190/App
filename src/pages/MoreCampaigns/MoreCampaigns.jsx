@@ -19,6 +19,7 @@ const MoreCampaigns = () => {
   const [searchTerm, setSearchTerm] = useState(""); // State for search term  
   const navigate = useNavigate();  
   const dispatch = useDispatch(); 
+    const Nav = useNavigate()
 
     
   useEffect(() => {  
@@ -79,6 +80,7 @@ const MoreCampaigns = () => {
               className="Mcampaigns-card"  
               key={Mcampaign.id}  
               data-aos="fade-up"  
+                onclick={()=>Nav(`https://kindraiseweb.vercel.app/fundraising-page/${ev}`)}
             >  
               <img  
                 src={Mcampaign.profilePic}  
