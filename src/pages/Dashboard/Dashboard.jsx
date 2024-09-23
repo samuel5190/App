@@ -20,7 +20,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 // import { myCampaigns } from "../../global/slice.js";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { myCampaigns } from "../../global/slice";
 // import { Bar } from 'rechart';
 // import { BarChart, ResponsiveContainer,Bar, XAxis, YAxis, Tooltip } from 'recharts';
@@ -121,17 +121,22 @@ const DashBoard = () => {
           Authorization: `Bearer: ${token}`,
         };
         const res = await axios.get(url, { headers })
+        setCampaign(res?.data?.allCampaigns)
+        // console.log(campaign)
+        console.log(res, "res")
+        setTotalRaised(res?.data?.totalRaisedFromAllCampaigns)
+        // toast.success(res?.data?.message)
         dispatch(myCampaigns(res?.data?.allCampaigns))
         // console.log("The res",res?.data?.allCampaigns);
         setCampaign(res?.data?.allCampaigns);
         const total = res?.data?.allCampaigns.reduce((acc, campaign) => (acc + Number(campaign.totalRaised)), 0)
         setTotalRaised(total)
-        console.log(total)
+        console.log(total, "total")
         dispatch(myCampaigns(res?.data?.allCampaigns));
         
         setLoading(false);
       }catch(err){
-        toast.error(err?.response?.data?.message)
+        // toast.error(err?.response?.data?.message)
         // setLoading(false); // Data has finished loading even on error
       };
   }
@@ -145,7 +150,7 @@ const DashBoard = () => {
   //   console.log(totalRaised)
   // },[totalRaised])
   const camp = useSelector((state)=>state.kindraise.myCampaigns)
-  console.log(camp)
+  // console.log(camp)
 
   function getFirstTwoObjects(arr) {
     // Check if the input is an array and has at least two objects
@@ -156,7 +161,14 @@ const DashBoard = () => {
     }
   }
 
-  const firstTwoProducts = getFirstTwoObjects(camp);
+  function totalSupporters(campaigns) {  
+    return campaigns.map(campaign => campaign.supporters) // Extract the number of supporters  
+    .reduce((accumulator, current) => accumulator + current, 0); // Sum them up  
+ }
+
+ const total = totalSupporters(campaign);
+
+  const firstTwoProducts = getFirstTwoObjects(campaign);
   // console.log(firstTwoProducts, "first two");
 
   function filterActiveCampaigns(products) {
@@ -317,7 +329,7 @@ const DashBoard = () => {
             </div>
             <div className="dashboardSmallCard">
               <div className="dashBoardCardUpper">
-                <h2 className="upperCardMainText three">40</h2>
+                <h2 className="upperCardMainText three">{total}</h2>
                 <div className="upperCardSubText">Total Donors</div>
               </div>
               <div className="dashBoardCardLower">
@@ -378,8 +390,8 @@ const DashBoard = () => {
               </div>
               <div className="fundraiseDashBody">
                 {
-                  loading ? <div>Fetching campaigns...</div>:
-                firstTwoProducts.map((e, i) => {
+                  // loading ? <div>Fetching campaigns...</div>:
+                  firstTwoProducts.map((e, i) => {
                   const percentage = (e.totalRaised / e.Goal) * 100;
 
                   return (
@@ -500,6 +512,7 @@ const DashBoard = () => {
           </div>
         </div>
       </div>
+      <Toaster/>
     </div>
   );
 };

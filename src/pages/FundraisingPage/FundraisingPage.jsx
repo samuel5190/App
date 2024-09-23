@@ -34,7 +34,7 @@ const FundraisingPage = () => {
   const [toggles, setToggles] = useState(false)
 
   const payment = {
-      amount,
+      amount:amount,
       // bank,
       name,
       email,
