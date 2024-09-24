@@ -5,30 +5,31 @@ import { BsArrowDown } from 'react-icons/bs';
 import { BiSearch } from 'react-icons/bi';  
 import { useNavigate } from 'react-router-dom';  
 
-const Contacts = () => {  
+const Contacts = ({persons}) => {  
   const [selectedPerson, setSelectedPerson] = useState(null);  
   const [searchTerm, setSearchTerm] = useState(""); // State for search term  
   const Nav = useNavigate();  
 
-  const persons = [  
-    { name: "Alice", amount: 25, date: "22/03/2024", campaign: "Save the tree",   
-      message: "I’m so proud to be a changemaker. #Love", email: "alice@gmail.com",   
-      contribution: "1,000", contact_since: "22/03/2024" },  
-    { name: "Bob", amount: 30, date: "22/03/2024", campaign: "Save the tree",   
-      message: "I’m so proud to be a changemaker. #Love", email: "bobby@gmail.com",   
-      contribution: "1,000", contact_since: "22/03/2024" },  
-    { name: "Charlie", amount: 22, date: "22/03/2024", campaign: "Save the tree",   
-      message: "I’m so proud to be a changemaker. #Love", email: "charles@gmail.com",   
-      contribution: "1,000", contact_since: "22/03/2024" },  
-    { name: "john", amount: 22, date: "22/03/2024", campaign: "Save the tree",   
-      message: "I’m so proud to be a changemaker. #Love", email: "joeDoe@gmail.com",   
-      contribution: "1,000", contact_since: "22/03/2024" },  
-  ];  
+  // const persons = [  
+  //   { name: "Alice", amount: 25, date: "22/03/2024", campaign: "Save the tree",   
+  //     message: "I’m so proud to be a changemaker. #Love", email: "alice@gmail.com",   
+  //     contribution: "1,000", contact_since: "22/03/2024" },  
+  //   { name: "Bob", amount: 30, date: "22/03/2024", campaign: "Save the tree",   
+  //     message: "I’m so proud to be a changemaker. #Love", email: "bobby@gmail.com",   
+  //     contribution: "1,000", contact_since: "22/03/2024" },  
+  //   { name: "Charlie", amount: 22, date: "22/03/2024", campaign: "Save the tree",   
+  //     message: "I’m so proud to be a changemaker. #Love", email: "charles@gmail.com",   
+  //     contribution: "1,000", contact_since: "22/03/2024" },  
+  //   { name: "john", amount: 22, date: "22/03/2024", campaign: "Save the tree",   
+  //     message: "I’m so proud to be a changemaker. #Love", email: "joeDoe@gmail.com",   
+  //     contribution: "1,000", contact_since: "22/03/2024" },  
+  // ];  
 
   // Filter the persons based on the search term  
   const filteredPersons = persons.filter(person =>  
     person.name.toLowerCase().includes(searchTerm.toLowerCase())  
   );  
+  
 
   const columns = React.useMemo(  
     () => [  
@@ -42,11 +43,11 @@ const Contacts = () => {
       },  
       {  
         Header: 'Contribution',  
-        accessor: 'contribution',  
+        accessor: 'amount',  
       },  
       {  
         Header: 'Contact since',  
-        accessor: 'contact_since',  
+        accessor: 'donationDate',  
       }  
     ],  
     []  

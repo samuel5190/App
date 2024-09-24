@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Track.css'
 import useLocalStorage from 'use-local-storage'
 // import Transaction from '../DonorsComponents/Transaction'
@@ -6,6 +6,8 @@ import useLocalStorage from 'use-local-storage'
 import { BiFilter, BiSearch } from 'react-icons/bi'
 import Transaction from '../../components/Transaction/Transaction'
 import Contacts from '../../components/Contacts/Contacts'
+import { useSelector } from 'react-redux'
+import axios from 'axios'
 // import ProgressBar from '../components/ProgressBar/ProgressBar'
 
 const Track = () => {
@@ -15,14 +17,34 @@ const Track = () => {
   const [filterToggle, setFilterToggle] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterStatus, setFilterStatus] = useState("all"); // Filter state
-  // console.log(search);
+
+
+
+  const token = useSelector((state) => state.kindraise.token); 
+  const [persons, setPersons] = useState([])
+
+  useEffect(()=>{
+    const url = "https://kindraise.onrender.com/api/v1/history"
+    axios 
+      .get(url, {  
+        headers: { Authorization: `Bearer: ${token}` },  
+      }) 
+      .then((res)=>{
+        console.log(res)
+        setPersons(res?.data?.donations)
+      })
+      .catch((err)=>{
+        console.log(err?.message, "all")
+        toast.error(err?.message)
+      })
+  },[])
 
   const renderComponent = () => {
     switch (presentComponent) {
       case "A":
-        return <Transaction />;
+        return <Transaction persons={persons} />;
       case "B":
-        return <Contacts />;
+        return <Contacts persons={persons}/>;
       default:
         return <Transaction />;
     }

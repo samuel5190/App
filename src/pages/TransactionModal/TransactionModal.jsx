@@ -20,7 +20,7 @@ const TransactionModal = ({person,setModal}) => {
           <div className='donorDetailsPaymentType'>
             <div className='paymentTypeBoxHolder'>
               <div>Campaign</div>
-              <span className='extraDetails'>{data.campaign}</span>
+              <span className='extraDetails'>{data.campaign.title}</span>
             </div>
             <div className='paymentTypeBoxHolder'>
               <div>Payment method</div>
@@ -32,7 +32,7 @@ const TransactionModal = ({person,setModal}) => {
         <div className='donorDetailsBoxHead'><span>Donor Information</span></div>
         <div className='donordetailsInfoBox'>
           <div className='contactInfoLabel'>Contact information</div>
-          <div className='contactInfoEmail'>Jackbrook@gmail.com</div>
+          <div className='contactInfoEmail'>{data.email}</div>
           <div className='donorContactInfoEmailBox'><CgMail size={20}/>Email</div>
         </div>
         <div className='donorDetailsBoxHead'><span>Message</span></div>
@@ -40,7 +40,7 @@ const TransactionModal = ({person,setModal}) => {
         <div className='donorDetailsBoxFoot'>
           <div className='detailsFootHoldBox'>
             <div style={{color: "#5C6062"}}>Transaction id</div>
-            <div>1445786543</div>
+            <div>{data._id}</div>
           </div>
         </div>
       </div>
