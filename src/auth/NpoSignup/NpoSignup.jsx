@@ -19,6 +19,7 @@ const NpoSignup = ({ setActiveSignupPage }) => {
   const [loading, setLoading] = useState(false);
   const Nav = useNavigate()
 
+
   const formData = {
     organizationName,
     registrationNumber,
@@ -28,6 +29,7 @@ const NpoSignup = ({ setActiveSignupPage }) => {
   };
 
   const [show, setShow] = useState(false);
+  console.log(show)
 
   // Password validation logic
   const handlePassword = (e) => {
