@@ -12,7 +12,7 @@ const TermsOfUse = () => {
     <>
       <Header />
       <div className='terms-content'>
-        <p><strong>Last Updated: 09/09/2024</strong></p>
+        <p className='topic'><strong>Last Updated: 09/09/2024</strong></p>
 
         <p>Please read these Terms of Use ("Terms", "Terms of Use") carefully before using the KindRaise website and fundraising platform (the "Service") operated by KindRaise Inc. ("us", "we", or "our").</p>
 
