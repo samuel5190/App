@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Transaction.css";
 // import PayoutTable from '../components/PayoutTable/PayoutTable'
 import { useTable } from "react-table";
@@ -6,11 +6,15 @@ import { BsArrowDown } from "react-icons/bs";
 import useLocalStorage from "use-local-storage";
 import { BiSearch } from "react-icons/bi";
 import TransactionModal from "../../pages/TransactionModal/TransactionModal";
+import axios from "axios";
+import { useSelector } from "react-redux";
 
 const Transaction = () => {  
   const [modal, setModal] = useLocalStorage(false);  
   const [selectedPerson, setSelectedPerson] = useState(null);  
-  const [searchTerm, setSearchTerm] = useState(""); // State for the search term  
+  const [searchTerm, setSearchTerm] = useState(""); // State for the search term 
+  const token = useSelector((state) => state.kindraise.token); 
+  const [person, setPerson] = useState()
 
   const persons = [  
     {  
@@ -44,6 +48,27 @@ const Transaction = () => {
       contact_since: "22/03/2024",  
     },  
   ];  
+
+
+
+  const getDonors = async() => {
+    try {
+      const url = "https://kindraise.onrender.com/api/v1/history";
+      const headers = {
+        Authorization: `Bearer: ${token}`,
+      };
+      const res = await axios.get(url, { headers });
+      console.log(res?.data?.donations)
+      setPersons()
+    }catch (err) {
+      console.log(err, "all donors")
+    }
+  }
+
+  useEffect(()=>{
+    getDonors()
+    // getDonors()
+  },[])
 
   // Filter persons based on search term  
   const filteredPersons = persons.filter(person =>  

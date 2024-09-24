@@ -134,7 +134,7 @@ const DashBoard = () => {
         setCampaign(res?.data?.allCampaigns);
         const total = res?.data?.allCampaigns.reduce((acc, campaign) => (acc + Number(campaign.totalRaised)), 0)
         setTotalRaised(total)
-        console.log(total, "total")
+        // console.log(total, "total")
         dispatch(myCampaigns(res?.data?.allCampaigns));
         
         setLoading(false);
@@ -144,8 +144,24 @@ const DashBoard = () => {
         setLoading(false); // Data has finished loading even on error
       };
   }
+
+  const getDonors = async() => {
+    try {
+      const url = "https://kindraise.onrender.com/api/v1/history";
+      const headers = {
+        Authorization: `Bearer: ${token}`,
+      };
+      const res = await axios.get(url, { headers });
+      console.log(res)
+    }catch (err) {
+      console.log(err, "all donors")
+    }
+  }
+
+
   useEffect(() => {
     fetchAll()
+    getDonors();
     // console.log("check")
   }, [totalRaised]);
 

@@ -200,9 +200,12 @@ gap: 10px;
 .preciseMoreBox {
   height: max-content;
   /* background-color: red; */
+  /* flex-wrap: wrap; */
   width: 100%;
   display: flex;
   gap: 20px;
+
+  
 }
 
 .preEmailSendBox {
@@ -271,4 +274,20 @@ gap: 10px;
     
   }
 
+}
+
+@media screen and (max-width: 675px) {
+  .preciseMoreBox {
+    flex-direction: column;
+  }
+
+  .preEmailSendBox {
+    width: 100%;
+    /* gap: 0px; */
+  }
+
+  .preDetailsDataBox {
+    width: 100%;
+    /* gap: 0px; */
+  }
 }
