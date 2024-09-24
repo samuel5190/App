@@ -415,7 +415,8 @@
 }  
 
 .details-container {  
-  width: 300px; /* Adjust width as needed */  
+  width: 300px;
+  /* background-color: green;   */
   padding: 10px;  
   /* background-color: ; */
   /* border-left: 1px solid #ccc; Optional: to separate details   */

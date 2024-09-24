@@ -146,7 +146,7 @@ const CreateCampaign = () => {
         <div className="createContent">
           <div className="createHead">
             <div className="createSmallHeader">
-              <div className={activeComponent === "A" ? "active" : "notActive"}>Content</div>  
+              <div onClick={content} className={activeComponent === "A" ? "active" : "notActive"}>Content</div>  
               <div className={activeComponent === "B" ? "active" : "notActive"}>Goal</div>  
               <div className={activeComponent === "C" ? "active" : "notActive"}>Sharing</div> 
             </div>
