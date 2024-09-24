@@ -5,6 +5,9 @@
     border: none;
     outline: none;
     margin-bottom: 10%;
+    /* background-color: #049255; */
+    width: 100%;
+    max-width: 500px;
 
 }
 
@@ -12,7 +15,7 @@
     padding: 10px;
     border: 0.8px solid #049255; 
     border-radius: 4px 0 0 4px;
-    width: 700px;
+    width: 100%;
     outline: none;
 }
 

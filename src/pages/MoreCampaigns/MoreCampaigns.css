@@ -204,6 +204,7 @@
     display: flex;
     flex-wrap: wrap;
     cursor: pointer;
+    justify-content: center;
 
 }
 

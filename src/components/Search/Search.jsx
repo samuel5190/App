@@ -18,7 +18,7 @@ const Search = ({setSearchTerm,searchTerm}) => {
             className="search-input"  // Added className
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Search..."
+            placeholder="Search by Title..."
           />
           <button className='searchBtn' onClick={handleSearch}>
             <i className="fas fa-search"></i>

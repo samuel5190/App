@@ -13,7 +13,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const {token} = useSelector((state)=>state.kindraise)
-  console.log(token,"user")
+  // console.log(token,"user")
 
   const handleHamburgerClick = () => {
     setIsMenuOpen(!isMenuOpen);
