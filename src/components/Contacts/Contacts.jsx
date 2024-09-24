@@ -29,6 +29,7 @@ const Contacts = ({persons}) => {
   const filteredPersons = persons.filter(person =>  
     person.name.toLowerCase().includes(searchTerm.toLowerCase())  
   );  
+  
 
   const columns = React.useMemo(  
     () => [  
