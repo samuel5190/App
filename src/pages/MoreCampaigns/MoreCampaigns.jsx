@@ -22,7 +22,6 @@ const MoreCampaigns = () => {
   const [err, setErr] = useState('')
   const navigate = useNavigate();  
   const dispatch = useDispatch(); 
-  // const Nav = useNavigate()
 
     
   useEffect(() => {  
@@ -102,7 +101,7 @@ const MoreCampaigns = () => {
                 src={Mcampaign.profilePic}  
                 alt={Mcampaign.story}  
                 className="Mcampaigns-image"  
-                
+                onClick={()=>navigate(`/fundraising-page/${Mcampaign.ev}`)}
               />  
               <div className="Mcampaigns-info">  
                 <h2 className="Mcampaigns-title">{Mcampaign.title}</h2>  

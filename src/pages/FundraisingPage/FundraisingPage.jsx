@@ -82,6 +82,7 @@ const FundraisingPage = () => {
       })
       .catch((err) => {
         console.log(err);
+        toast.error(err?.message)
       });
   };
   function debounce(func, delay) {

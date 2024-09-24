@@ -17,17 +17,19 @@ import { BsMegaphone, BsPeople } from "react-icons/bs";
 import { AiOutlineExport } from "react-icons/ai";
 import School from "../../assets/School.svg";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 // import { myCampaigns } from "../../global/slice.js";
 import toast, { Toaster } from "react-hot-toast";
 import { myCampaigns } from "../../global/slice";
+import { BeatLoader } from "react-spinners";
 // import { Bar } from 'rechart';
 // import { BarChart, ResponsiveContainer,Bar, XAxis, YAxis, Tooltip } from 'recharts';
 
 const DashBoard = () => {
   // const userData = JSON.parse(localStorage.getItem('userData'))
   // console.log(userData)
+  const dispatch = useDispatch()
 
   const products = [
     {
@@ -137,13 +139,14 @@ const DashBoard = () => {
         
         setLoading(false);
       }catch(err){
-        // toast.error(err?.response?.data?.message)
-        // setLoading(false); // Data has finished loading even on error
+        console.log(err)
+        toast.error(err?.message)
+        setLoading(false); // Data has finished loading even on error
       };
   }
   useEffect(() => {
     fetchAll()
-    console.log("check")
+    // console.log("check")
   }, [totalRaised]);
 
 
@@ -304,6 +307,9 @@ const DashBoard = () => {
         <div className="dashboardContent">
           <div className="dashBoardUpperCard">
             <div className="dashboardSmallCard">
+              {
+                totalRaised ?
+                <>
               <div className="dashBoardCardUpper">
                 <h2 className="upperCardMainText one">₦{totalRaised}</h2>
                 <div className="upperCardSubText">Total Raised</div>
@@ -313,7 +319,8 @@ const DashBoard = () => {
                 <div className="iconCircle">
                   <BiMoney color="rgb(78, 78, 239)" size={20} />
                 </div>
-              </div>
+              </div></> : <BeatLoader/>
+              }
             </div>
             <div className="dashboardSmallCard">
               <div className="dashBoardCardUpper">
@@ -329,6 +336,8 @@ const DashBoard = () => {
               </div>
             </div>
             <div className="dashboardSmallCard">
+              {
+                total ? <>
               <div className="dashBoardCardUpper">
                 <h2 className="upperCardMainText three">{total}</h2>
                 <div className="upperCardSubText">Total Donors</div>
@@ -341,9 +350,12 @@ const DashBoard = () => {
                     <BsPeople color="rgb(78, 78, 239)" size={20} />
                   </div>
                 </div>
-              </div>
+              </div> </>: <BeatLoader/>
+              }
             </div>
             <div className="dashboardSmallCard">
+              {
+                activeCampaigns ?<>
               <div className="dashBoardCardUpper">
                 <h2 className="upperCardMainText four">
                   {activeCampaigns.length}
@@ -357,6 +369,8 @@ const DashBoard = () => {
                   <BsMegaphone color="rgb(78, 78, 239)" size={20} />
                 </div>
               </div>
+                </>:<BeatLoader/>
+              }
             </div>
             {/* <div className="dashboardSmallCard">hello</div>
             <div className="dashboardSmallCard">hello</div>
@@ -364,6 +378,8 @@ const DashBoard = () => {
           </div>
 
           <div className="dashBoardLowerCard">
+            {
+              monthly ?
             <div className="barChart">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={monthly}>
@@ -380,7 +396,8 @@ const DashBoard = () => {
                   />
                 </BarChart>
               </ResponsiveContainer>
-            </div>
+            </div> : null
+            }
 
             <div className="fundraisingDashboardBox">
               <div className="fundraiseDashHead">

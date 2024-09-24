@@ -373,7 +373,19 @@ tr {
 th {
   border: 3px solid red;
 } */
+.tableWrapperTransaction {
+  /* background-color: red; */
+}
 
+.table-containerTransaction {
+  /* background-color: green; */
+}
+
+.tableHead {
+  background-color: yellow;
+  position: sticky;
+  top: 0;
+}
 
 .table-cellNow {  
   max-width: 150px; /* Set a maximum width for truncation */  
