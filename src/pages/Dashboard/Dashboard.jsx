@@ -323,9 +323,6 @@ const DashBoard = () => {
         <div className="dashboardContent">
           <div className="dashBoardUpperCard">
             <div className="dashboardSmallCard">
-              {
-                totalRaised ?
-                <>
               <div className="dashBoardCardUpper">
                 <h2 className="upperCardMainText one">₦{totalRaised}</h2>
                 <div className="upperCardSubText">Total Raised</div>
@@ -335,8 +332,7 @@ const DashBoard = () => {
                 <div className="iconCircle">
                   <BiMoney color="rgb(78, 78, 239)" size={20} />
                 </div>
-              </div></> : <BeatLoader/>
-              }
+              </div>
             </div>
             <div className="dashboardSmallCard">
               <div className="dashBoardCardUpper">
@@ -352,8 +348,7 @@ const DashBoard = () => {
               </div>
             </div>
             <div className="dashboardSmallCard">
-              {
-                total ? <>
+
               <div className="dashBoardCardUpper">
                 <h2 className="upperCardMainText three">{total}</h2>
                 <div className="upperCardSubText">Total Donors</div>
@@ -366,12 +361,10 @@ const DashBoard = () => {
                     <BsPeople color="rgb(78, 78, 239)" size={20} />
                   </div>
                 </div>
-              </div> </>: <BeatLoader/>
-              }
+              </div>
             </div>
             <div className="dashboardSmallCard">
-              {
-                activeCampaigns ?<>
+              
               <div className="dashBoardCardUpper">
                 <h2 className="upperCardMainText four">
                   {activeCampaigns.length}
@@ -385,8 +378,8 @@ const DashBoard = () => {
                   <BsMegaphone color="rgb(78, 78, 239)" size={20} />
                 </div>
               </div>
-                </>:<BeatLoader/>
-              }
+
+              
             </div>
             {/* <div className="dashboardSmallCard">hello</div>
             <div className="dashboardSmallCard">hello</div>
@@ -394,8 +387,7 @@ const DashBoard = () => {
           </div>
 
           <div className="dashBoardLowerCard">
-            {
-              monthly ?
+
             <div className="barChart">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={monthly}>
@@ -412,8 +404,7 @@ const DashBoard = () => {
                   />
                 </BarChart>
               </ResponsiveContainer>
-            </div> : null
-            }
+            </div>
 
             <div className="fundraisingDashboardBox">
               <div className="fundraiseDashHead">
