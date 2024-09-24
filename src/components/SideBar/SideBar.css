@@ -32,6 +32,7 @@
     width: 100%;
     gap: 15px;
     display: flex;
+    text-decoration: none;
     padding: 10px;
     /* justify-content: center; */
     align-items: center;
@@ -39,6 +40,10 @@
     /* border-radius: 10px; */
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
   
   .end {
@@ -54,12 +59,14 @@
     gap: 15px;
     padding: 10px;
     align-items: center;
+    text-decoration: none;
     /* border-radius: 10px; */
     text-decoration: none;
     color: Black;
   
     &:hover {
       background-color: rgba(211, 211, 211, 0.171);
+      text-decoration: none;
     }
   }
   
