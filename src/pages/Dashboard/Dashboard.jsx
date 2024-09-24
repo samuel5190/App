@@ -114,6 +114,7 @@ const DashBoard = () => {
   const [test, setTest] = useState(null);
   const [totalRaised, setTotalRaised] = useState(0)
   const [monthly, setMonthly] = useState()
+  const [today, setToday]= useState(0)
 
   const fetchAll = async()=>{
       try{
@@ -127,12 +128,16 @@ const DashBoard = () => {
         setCampaign(res?.data?.allCampaigns)
         // console.log(campaign)
         setMonthly(res?.data?.monthlyDonations)
+        // setToday(res?.data?.todayRaised)
+        console.log(res, "responce")
         setTotalRaised(res?.data?.totalRaisedFromAllCampaigns)
         // toast.success(res?.data?.message)
         dispatch(myCampaigns(res?.data?.allCampaigns))
         // console.log("The res",res?.data?.allCampaigns);
         setCampaign(res?.data?.allCampaigns);
         const total = res?.data?.allCampaigns.reduce((acc, campaign) => (acc + Number(campaign.totalRaised)), 0)
+        setToday(res?.data?.allCampaigns.reduce((acc, campaign) => (acc + Number(campaign.todaysDonation)), 0))
+        console.log(today, "today")
         setTotalRaised(total)
         // console.log(total, "total")
         dispatch(myCampaigns(res?.data?.allCampaigns));
@@ -255,9 +260,7 @@ const DashBoard = () => {
       contact_since: "22/03/2024",
     },
   ];
-  if (!selectedPerson) {
-    setSelectedPerson(persons[0]);
-  }
+  
 
   const [data, setdata] = useState([
     {
@@ -290,7 +293,7 @@ const DashBoard = () => {
   const percentage = (1000 / 2000) * 100;
 
   const gotten = getPerson(person)
-  console.log(gotten, "gotten")
+  // console.log(gotten, "gotten")
 
   const RoundedTopBar = (props) => {
     const { x, y, width, height, radius, fill } = props;
@@ -322,6 +325,10 @@ const DashBoard = () => {
   const filteredPersons = persons.filter((person) =>
     person.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  
+  if (!selectedPerson) {
+    setSelectedPerson(persons[0]);
+  }
 
   const handlePersonClick = (person) => {
     setSelectedPerson(person); // Set the selected person
@@ -343,7 +350,7 @@ const DashBoard = () => {
           <div className="dashBoardUpperCard">
             <div className="dashboardSmallCard">
               <div className="dashBoardCardUpper">
-                <h2 className="upperCardMainText one">₦{totalRaised}</h2>
+                <h2 className="upperCardMainText one">₦{totalRaised?.toLocaleString()}</h2>
                 <div className="upperCardSubText">Total Raised</div>
               </div>
               <div className="dashBoardCardLower">
@@ -355,8 +362,8 @@ const DashBoard = () => {
             </div>
             <div className="dashboardSmallCard">
               <div className="dashBoardCardUpper">
-                <h2 className="upperCardMainText two">₦12,000</h2>
-                <div className="upperCardSubText">Total Donation</div>
+                <h2 className="upperCardMainText two">₦{today?.toLocaleString()}</h2>
+                <div className="upperCardSubText">Today Donation</div>
               </div>
               <div className="dashBoardCardLower">
               <div className="cardSmallText"></div>
@@ -369,7 +376,7 @@ const DashBoard = () => {
             <div className="dashboardSmallCard">
 
               <div className="dashBoardCardUpper">
-                <h2 className="upperCardMainText three">{total}</h2>
+                <h2 className="upperCardMainText three">{total?.toLocaleString()}</h2>
                 <div className="upperCardSubText">Total Donors</div>
               </div>
               <div className="dashBoardCardLower">
@@ -456,7 +463,7 @@ const DashBoard = () => {
 
                         <div className="fundraiseAmountTrack">
                           <div>
-                            ₦{e.totalRaised}/<span>{e.Goal}</span>
+                            ₦{e.totalRaised?.toLocaleString()}/<span>{e.Goal?.toLocaleString()}</span>
                           </div>
                           <div>{percentage}% funded</div>
                         </div>
