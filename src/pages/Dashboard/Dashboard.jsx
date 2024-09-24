@@ -152,7 +152,9 @@ const DashBoard = () => {
         Authorization: `Bearer: ${token}`,
       };
       const res = await axios.get(url, { headers });
-      console.log(res)
+      // console.log(res)
+      setPerson(res?.data?.donations)
+      console.log(person, "person")
     }catch (err) {
       console.log(err, "all donors")
     }
@@ -180,6 +182,23 @@ const DashBoard = () => {
       return []; // Return an empty array if the input is not an array
     }
   }
+  // const getFirstTwoObjects=(arr)=> {
+  //   // Check if the input is an array and has at least two objects
+  //   if (Array.isArray(arr)) {
+  //     return arr.slice(0, 2); // Return the first two objects
+  //   } else {
+  //     return []; // Return an empty array if the input is not an array
+  //   }
+  // }
+  const getPerson =(arr)=>{
+    if (Array.isArray(arr)) {
+      return arr.slice(0, 4); // Return the first two objects
+    } else {
+      return []
+    }
+  }
+
+
 
   function totalSupporters(campaigns) {  
     return campaigns.map(campaign => campaign.supporters) // Extract the number of supporters  
@@ -206,7 +225,7 @@ const DashBoard = () => {
 
   const [searchTerm, setSearchTerm] = useState(""); // State for search term
   const [selectedPerson, setSelectedPerson] = useState(null); // State for selected person
-
+  const [person, setPerson] = useState([]); 
   const persons = [
     {
       name: "Alice",
@@ -268,10 +287,10 @@ const DashBoard = () => {
   ]);
 
   const Nav = useNavigate();
-
-  // const max = 2000;
-  // const current = 1000;
   const percentage = (1000 / 2000) * 100;
+
+  const gotten = getPerson(person)
+  console.log(gotten, "gotten")
 
   const RoundedTopBar = (props) => {
     const { x, y, width, height, radius, fill } = props;
@@ -381,9 +400,6 @@ const DashBoard = () => {
 
               
             </div>
-            {/* <div className="dashboardSmallCard">hello</div>
-            <div className="dashboardSmallCard">hello</div>
-            <div className="dashboardSmallCard">hello</div> */}
           </div>
 
           <div className="dashBoardLowerCard">
@@ -450,61 +466,14 @@ const DashBoard = () => {
                 })
                 }
 
-                {/* <div className="fundRaiseDashCard">
-                  <div className="fundraiseFrameBox">
-                    <div className="fundRaiseFrameImgBox">
-                      <img src={School} alt="" />
-                    </div>
-                    <div className="fundRaiseFrameText">
-                      Sponsor 5 Children in Nigeria Get Back to School
-                    </div>
-                  </div>
-                  <div className="fundRaiseTrackBox">
-                    <div className="trackBoxDash small">
-                      <div className="progress-containerDash">
-                        <div
-                          className="progress-barDash"
-                          style={{ width: `${percentage}%` }}
-                        ></div>
-                      </div>
-                    </div>
-                    <div className="fundraiseAmountTrack">
-                      <div>
-                        ₦100,450/<span>150,000</span>
-                      </div>
-                      <div>69% funded</div>
-                    </div>
-                  </div>
-                </div> */}
+               
               </div>
             </div>
           </div>
-
-          {/* <div className="recentDonorsHistory">
-            <div className="donationHistoryPersonBox">
-              <div className="donorHistoryHead">Donation history</div>
-              <div className="donorHistoryPeople">
-                <div className="donorPeople">hello</div>
-                <div className="donorPeople">hello</div>
-              </div>
-            </div>
-            <div className="donationHistoryPersonShow">hello</div>
-          </div> */}
           <div className="contacts-container">
-            {/* <div className="transactionSearchSide">  
-        <div className="searchBox">  
-          <BiSearch color="gray" />  
-          <input  
-            type="text"  
-            placeholder="Search by name"  
-            value={searchTerm} // Bind input value to searchTerm state  
-            onChange={(e) => setSearchTerm(e.target.value)} // Update search term on change  
-          />  
-        </div>  
-      </div>   */}
             <div className="contactBox">
               <div className="contacts-list">
-                {filteredPersons.map((person, index) => (
+                {gotten.map((person, index) => (
                   <div
                     key={index}
                     className="person-item"
