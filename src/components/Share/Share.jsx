@@ -113,7 +113,7 @@ const Share = ({setActiveComponent,setEv,ev,campaignData,Create,loading}) => {
           <div className="codeHolder" ref={qrRef}>
             <QRCodeSVG value={link} size={140}/>
           </div>
-          <button onClick={handleDownload} className="codeDbBtn animate__animated animate__fadeIn animate__infinite animate__slow"><GoDownload />Download</button>
+          <button onClick={handleDownload} className="codeDbBtn"><GoDownload />Download</button>
           <button className="codeDbBtn" onClick={handlePrint}><PiPrinterThin />Print</button>
         </div>
       </div>

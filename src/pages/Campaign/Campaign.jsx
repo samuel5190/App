@@ -161,7 +161,7 @@ const Campaign = () => {
                 <Loading/> 
               ) : (  
                 <table {...getTableProps()} className="campaign-table">  
-                  <thead>  
+                  <thead className="tableHead">  
                     {headerGroups.map(headerGroup => (  
                       <tr {...headerGroup.getHeaderGroupProps()} className="table-header">  
                         {headerGroup.headers.map(column => (  

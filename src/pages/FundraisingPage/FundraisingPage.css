@@ -32,6 +32,24 @@
 
   .donateBoxMedia {
     display: none;
+    /* background-color: red; */
+    height: max-content;
+    /* border: 1px solid lightgray; */
+  }
+
+  .xtraPrintBox {
+    /* background-color: green; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 20px; */
+    gap: 30px;
+    /* height: 50px; */
+
+    div {
+      cursor: pointer;
+    }
+
   }
 
 @media screen and (max-width: 768px) {
@@ -157,15 +175,16 @@
   
   .progress-container {  
     width: 100%; /* w-full */  
-    background-color: #E2E8F0; /* bg-gray-300 */  
-    border-radius: 9999px; /* rounded-full */  
-    height: 24px;  
+    /* background-color: #E2E8F0;   */
+    /* border-radius: 9999px;  */
+    height: 20px;  
+    margin-bottom: 10px;
   } 
   
   .progress-bar {  
     background-color: #05BB6D; /* bg-blue-600 */  
     height: 100%; /* h-full */  
-    border-radius: 9999px; /* rounded-full */  
+    border-radius: 50%; /* rounded-full */  
     transition: width 0.3s ease;  
   } 
   
@@ -296,13 +315,15 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
   
     .fundDonor {
-      height: 60px;
+      height: max-content;
       width: 100%;
       /* background-color: rgb(217, 108, 108); */
+      flex-wrap: wrap;
       display: flex;
+      /* gap: 50px; */
       justify-content: space-between;
       align-items: center;
     }

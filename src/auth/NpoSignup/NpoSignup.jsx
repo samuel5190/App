@@ -3,6 +3,7 @@ import './NpoSignup.css';
 import { BsEye, BsEyeSlash } from 'react-icons/bs';
 import toast, { Toaster } from 'react-hot-toast';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const NpoSignup = ({ setActiveSignupPage }) => {
   const [organizationName, setOrganizationName] = useState('');
@@ -16,6 +17,8 @@ const NpoSignup = ({ setActiveSignupPage }) => {
   const [passwordErrorNumber, setPasswordErrorNumber] = useState(false);
   const [termsChecked, setTermsChecked] = useState(false);
   const [loading, setLoading] = useState(false);
+  const Nav = useNavigate()
+
 
   const formData = {
     organizationName,
@@ -26,6 +29,7 @@ const NpoSignup = ({ setActiveSignupPage }) => {
   };
 
   const [show, setShow] = useState(false);
+  console.log(show)
 
   // Password validation logic
   const handlePassword = (e) => {
@@ -97,7 +101,7 @@ const NpoSignup = ({ setActiveSignupPage }) => {
     <>
       <div className='npoSignUpBody'>
         <div className='signupLoginBox'>
-          Already have an account? <span onClick={() => setActiveSignupPage('/')}> Sign in</span>
+          Already have an account? <span onClick={() => Nav('/login')}> Sign in</span>
         </div>
         <div className='indSignupInputBox'>
           <h1 className='indSignupQusBox'>Tell us about yourself</h1>
