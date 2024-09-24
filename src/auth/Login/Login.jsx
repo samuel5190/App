@@ -38,8 +38,8 @@ const Login = () => {
 
       })
       .catch((err)=>{
-        console.log(err)
-        toast.error(err?.message)
+        console.log(err?.response?.data?.info)
+        toast.error(err?.response?.data?.info)
         setLoading(false)
       })
     }
