@@ -1,4 +1,4 @@
-.header {
+/* .header {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -78,7 +78,7 @@
   background-color: #05CE78;
 }
 
-/* Mobile and Tablet Header */
+Mobile and Tablet Header 
 .header-mobile {
   display: none; 
 }
@@ -190,4 +190,142 @@
       background-color: #05CE78; 
     }
   }    
+} */
+
+header {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.headWrapper {
+  height: 50%;
+  background-color: white;
+  width: 90%;
+  border-radius: 16px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  /* box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 20px;
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+    align-items: center;
+    /* background-color: red; */
+
+    li {
+      cursor: pointer;
+
+      &:hover {
+        color: #05BB6D;
+      }
+
+      button {
+        margin-top: auto; 
+        padding: 12px; 
+        background-color: #05BB6D; 
+        cursor: pointer;
+        color: white; 
+        border: none; 
+        border-radius: 8px; 
+        text-align: center; 
+        font-size: 16px; 
+        transition: background-color 0.3s ease; 
+
+        &:hover {
+          background-color: var(--sky-dancer);
+        }
+      }
+    }
+  }
+
+}
+
+.mobileMenuHead {
+  display: none;
+}
+
+.headSearchBox {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.headCampBox {
+  cursor: pointer;
+
+  &:hover {
+    color: #05BB6D;
+  }
+}
+
+.headLogoBox {
+  width: 200px;
+  cursor: pointer;
+  /* background-color: red; */
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .headWrapper {
+    box-shadow: none;
+    width: 100%;
+
+    .headCampBox {
+      display: none;
+    }
+
+
+    li {
+      
+      display: none;
+    }
+
+    .mobileMenuHead {
+      display: block;
+      z-index: 9999;
+    }
+  }
+}
+
+.mediaHead {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.mediaHeadWrapper {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 100%;
+  width: 60%;
+  min-width: 250px;
+  /* background-color: #05bb84; */
+  background-color: white;
+  padding: 30px;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* background-color: #05bb84; */
+  }
 }
