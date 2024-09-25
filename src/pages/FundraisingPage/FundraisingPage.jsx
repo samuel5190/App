@@ -72,7 +72,7 @@ const FundraisingPage = () => {
 
   const send = () => {
     // get()
-    const api = `https://kindraise.onrender.com/api/v1/donate/${datas?.id}`;
+    const api = `https://kindraise.onrender.com/api/v1/donate/${datas?._id}`;
     axios
       .post(api, payment)
       .then((res) => {
