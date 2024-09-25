@@ -54,9 +54,9 @@ const FundraisingPage = () => {
     axios
       .get(url)
       .then((res) => {
-        setOneData(res?.data?.allCampaigns);
+        setOneData(res?.data?.campaigns);
         console.log(oneData, "one");
-        const nae = res?.data?.allCampaigns.filter((data) => data.ev == id);
+        const nae = res?.data?.campaigns.filter((data) => data.ev == id);
         console.log(nae);
         console.log(nae[0], "nae");
         setDatas(nae[0]);
