@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { CiSearch } from "react-icons/ci";
+import { RiCloseLine } from "react-icons/ri"; 
 import logo from "../../assets/logo.svg";
 import Hamburger from 'hamburger-react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Header = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const navigate = useNavigate();
   const { token } = useSelector((state) => state.kindraise);
-  console.log(token, "user");
 
   const handleLogo = () => {   
     if (token) {
@@ -25,8 +31,12 @@ const Header = () => {
     if (!token) {
       navigate('/');
     } else {
-      navigate('/dashboard');
+      navigate('/');
     }
+  };
+
+  const handleExploreCampaign = () => {
+    navigate("/explore-campaigns"); 
   };
 
   const toggleMenu = () => {
@@ -48,20 +58,39 @@ const Header = () => {
     };
   }, []);
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isOpen && !event.target.closest('.mobile-nav') && !event.target.closest('.hamburger')) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
     <header>
       {isMobile ? (
         <div className="header-mobile">
-          <CiSearch />
+          <CiSearch size={30} onClick={handleExploreCampaign} style={{ cursor: "pointer" }}/>
           <img src={logo} alt="logo" className="header-logo" onClick={proceed} />
-          <Hamburger
-            toggled={isOpen}
-            toggle={toggleMenu}
-            aria-label="Toggle navigation"
-          />
+          <div onClick={toggleMenu} aria-label="Toggle navigation">
+            {isOpen ? (
+              <RiCloseLine size={30} color="black" /> // Show close icon when menu is open
+            ) : (
+              <Hamburger size={30} toggled={isOpen} /> // Show hamburger icon when menu is closed
+            )}
+          </div>
           {isOpen && (
-            <nav className={`mobile-nav ${isOpen ? 'open' : ''}`}>
-              <a onClick={() => navigate('/about-us')}>About</a>
+            <nav className={`mobile-nav ${isOpen ? 'open' : ''}`} data-aos="slide-left" data-aos-duration="800">
+              <div className="nav-header">
+                <a onClick={() => navigate('/about-us')}>About</a>
+                <RiCloseLine size={24} color="black" onClick={toggleMenu} className="close-icon" /> 
+              </div>
               <a onClick={() => navigate('/explore-campaigns')}>Campaigns</a>
               <a onClick={() => navigate('/login')}>Login</a>
               <a className="signup-button" onClick={() => navigate('/signup')}>Sign Up</a>

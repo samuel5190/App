@@ -88,77 +88,79 @@
     display: none; 
   }
 
-  .header-mobile {
-    display: flex; 
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    height: 80px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+.header-mobile {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 80px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  .search-icon {
-    width: 34px !important;
-    height: 34px !important;
-    font-size: 50px !important;
-    cursor: pointer; 
-  }
+.mobile-nav {
+  position: fixed; 
+  top: 0; 
+  right: -250px; 
+  width: 200px; 
+  height: 55%; 
+  display: flex;
+  flex-direction: column; 
+  background-color: #fff; 
+  padding: 20px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 0 8px 8px 0; 
+  transition: right 0.3s ease; 
+  z-index: 1000;
+  border-radius: 8px;
+}
 
-  .hamburger {
-    margin-left: 10px; 
-    color: black; 
-    font-size: 24px; 
-    cursor: pointer; 
-  }
+.mobile-nav.open {
+  right: 0; 
+}
 
-  .mobile-nav {
-    position: fixed; 
-    top: 0; 
-    right: -250px; 
-    width: 250px; 
-    height: 100%; 
-    display: flex;
-    flex-direction: column; 
-    background-color: #fff; 
-    padding: 20px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    border-radius: 0 8px 8px 0; 
-    transition: right 0.3s ease; 
-    z-index: 1000;
-  }
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .mobile-nav.open {
-    right: 0; 
-  }
+.close-icon {
+  cursor: pointer;
+  font-size: 30px;
+  width: 30px;     
+  height: 30px;
+}
 
-  .mobile-nav a {
-    margin: 15px 0; 
-    text-decoration: none; 
-    color: #333; 
-    font-size: 18px;
-    text-align: left;
-    padding: 10px;
-    transition: color 0.3s ease; 
-  }
+.mobile-nav a {
+  margin: 15px 0; 
+  text-decoration: none; 
+  color: #333; 
+  font-size: 18px;
+  text-align: left;
+  padding: 10px;
+  transition: color 0.3s ease; 
+  cursor: pointer;
+}
 
-  .mobile-nav a:hover {
-    color: #05BB6D; 
-  }
+.mobile-nav a:hover {
+  color: #05BB6D; 
+  text-decoration: none;
+}
 
-  .signup-button {
-    margin-top: auto; 
-    padding: 12px; 
-    background-color: #05BB6D; 
-    color: white; 
-    border: none; 
-    border-radius: 8px; 
-    text-align: center; 
-    font-size: 16px; 
-    transition: background-color 0.3s ease; 
-  }
+.signup-button {
+  margin-top: auto; 
+  padding: 12px; 
+  background-color: #05BB6D; 
+  color: white; 
+  border: none; 
+  border-radius: 8px; 
+  text-align: center; 
+  font-size: 16px; 
+  transition: background-color 0.3s ease; 
+}
 
-  .signup-button:hover {
-    background-color: #05CE78; 
-  }
+.signup-button:hover {
+  background-color: #05CE78; 
+}
 }
