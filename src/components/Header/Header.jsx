@@ -10,9 +10,6 @@ import { BiMenu } from 'react-icons/bi';
 import { CgClose } from 'react-icons/cg';
 
 const Header = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
 
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
