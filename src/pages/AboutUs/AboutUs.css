@@ -9,6 +9,8 @@
 .about-inner{
     height: auto;
     background: #E6FAF2;
+    position: relative;
+    padding-top: 10px;
 }
 
 .about-section {
@@ -58,6 +60,10 @@
   @media (max-width: 768px) {
     .about-section {
       padding: 20px;
+    }
+
+    .about-inner{
+      padding-top: 0px;
     }
   
     .about-header {
