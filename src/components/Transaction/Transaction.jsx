@@ -179,11 +179,11 @@ const Transaction = ({persons}) => {
           </table>  
         </div>  
         <div className="tableFooterPagination">  
-          <div>hello</div>  
+          {/* <div>hello</div>  
           <div>hello</div>  
           <div>  
             10 per page <BsArrowDown />  
-          </div>  
+          </div>   */}
         </div>  
         {modal ? (  
           <TransactionModal person={selectedPerson} setModal={setModal} />  

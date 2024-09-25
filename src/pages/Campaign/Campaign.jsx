@@ -21,6 +21,7 @@ const Campaign = () => {
   const [campaigns, setCampaigns] = useState([]); // Original campaign list  
   const [filteredCampaigns, setFilteredCampaigns] = useState([]); // Filtered campaign list  
   const [selectedStatus, setSelectedStatus] = useState(""); // State for selected status  
+  const [err, setErr] = useState('')
 
   // Fetch campaigns from the API  
   useEffect(() => {  
@@ -39,7 +40,8 @@ const Campaign = () => {
         setLoading(false);  
       })  
       .catch((err) => {    
-        console.log(err);  
+        console.log(err?.response?.data?.message);  
+        setErr(err?.response?.data?.message)
         setLoading(false);  
       });  
   }, [token, dispatch]);  
@@ -188,6 +190,9 @@ const Campaign = () => {
                   </tbody>  
                 </table>  
               )}  
+              {
+                err ?<div>{err}</div>:null
+              }
             </div>  
             <div className="tableFooterPagination">  
               <div>Hello</div>  

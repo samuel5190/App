@@ -57,7 +57,7 @@ const Header = () => {
     <header>
       {isMobile ? (
         <div className="header-mobile">
-          <CiSearch />
+          <CiSearch onClick={()=>navigate('/explore-campaigns')}/>
           <img src={logo} alt="logo" className="header-logo" onClick={{proceed}} />
           <Hamburger
           toggled={isOpen}
