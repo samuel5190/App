@@ -1,4 +1,4 @@
-.header {
+/* .header {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -30,137 +30,145 @@
   text-decoration: none;
   color: #333;
   font-size: 17px;
-  cursor: pointer; /* Added cursor pointer for links */
-}
+  cursor: pointer; /* Added cursor pointer for links 
+ } */
 
-.header-left a:hover,
-.header-right a:hover {
-  text-decoration: none; 
-}
 
-.search-header-mobile {
+header {
+  height: 150px;
+  width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 5px;
+  /* background-color: red; */
 }
 
-.search-header-mobile span,
-.search-header-mobile svg {
-  display: inline-block;
-  vertical-align: middle;
-}
+.headWrapper {
+  height: 50%;
+  background-color: white;
+  width: 90%;
+  border-radius: 16px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  /* box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
-.header-center {
-  flex-grow: 1;
-  text-align: center;
-}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 20px;
 
-.header-logo {
-  width: 160px; 
-  cursor: pointer;
-}
+  ul {
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+    align-items: center;
+    /* background-color: red; */
 
-.signup-button {
-  padding: 10px 20px;
-  background-color: #05BB6D;
-  color: white !important;
-  border: none;
-  cursor: pointer;
-  font-family: Proxima Nova, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  text-align: center;
-  transition: background-color 0.3s ease;
-  border-radius: 8px; 
-}
+    li {
+      cursor: pointer;
 
-.signup-button:hover {
-  background-color: #05CE78;
-}
+      &:hover {
+        color: #05BB6D;
+      }
 
-/* Mobile and Tablet Header */
-.header-mobile {
-  display: none; 
-}
+      button {
+        margin-top: auto; 
+        padding: 12px; 
+        background-color: #05BB6D; 
+        cursor: pointer;
+        color: white; 
+        border: none; 
+        border-radius: 8px; 
+        text-align: center; 
+        font-size: 16px; 
+        transition: background-color 0.3s ease; 
 
-@media (max-width: 768px) {
-  .header-desktop {
-    display: none; 
+        &:hover {
+          background-color: var(--sky-dancer);
+        }
+      }
+    }
   }
 
-.header-mobile {
-  display: flex; 
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  height: 80px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.mobile-nav {
-  position: fixed; 
-  top: 0; 
-  right: -250px; 
-  width: 200px; 
-  height: 55%; 
+.mobileMenuHead {
+  display: none;
+}
+
+.headSearchBox {
   display: flex;
-  flex-direction: column; 
-  background-color: #fff; 
-  padding: 20px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  border-radius: 0 8px 8px 0; 
-  transition: right 0.3s ease; 
-  z-index: 1000;
-  border-radius: 8px;
-}
-
-.mobile-nav.open {
-  right: 0; 
-}
-
-.nav-header {
-  display: flex;
-  justify-content: space-between;
+  gap: 5px;
   align-items: center;
 }
 
-.close-icon {
+.headCampBox {
   cursor: pointer;
-  font-size: 30px;
-  width: 30px;     
-  height: 30px;
+
+  &:hover {
+    color: #05BB6D;
+  }
 }
 
-.mobile-nav a {
-  margin: 15px 0; 
-  text-decoration: none; 
-  color: #333; 
-  font-size: 18px;
-  text-align: left;
-  padding: 10px;
-  transition: color 0.3s ease; 
+.headLogoBox {
+  width: 200px;
   cursor: pointer;
+  /* background-color: red; */
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
 }
 
-.mobile-nav a:hover {
-  color: #05BB6D; 
-  text-decoration: none;
+@media screen and (max-width: 768px) {
+  .headWrapper {
+    box-shadow: none;
+    width: 100%;
+
+    .headCampBox {
+      display: none;
+    }
+
+
+    li {
+      
+      display: none;
+    }
+
+    .mobileMenuHead {
+      display: block;
+      z-index: 9999;
+    }
+  }
+
 }
 
-.signup-button {
-  margin-top: auto; 
-  padding: 12px; 
-  background-color: #05BB6D; 
-  color: white; 
-  border: none; 
-  border-radius: 8px; 
-  text-align: center; 
-  font-size: 16px; 
-  transition: background-color 0.3s ease; 
+.mediaHead {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
 }
 
-.signup-button:hover {
-  background-color: #05CE78; 
-}
+.mediaHeadWrapper {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 100%;
+  width: 60%;
+  min-width: 250px;
+  /* background-color: #05bb84; */
+  background-color: white;
+  padding: 30px;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* background-color: #05bb84; */
+  }
 }

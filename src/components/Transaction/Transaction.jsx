@@ -10,7 +10,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
 
-const Transaction = ({persons}) => {  
+const Transaction = ({persons=[]}) => {  
   const [modal, setModal] = useLocalStorage(false);  
   const [selectedPerson, setSelectedPerson] = useState(null);  
   const [searchTerm, setSearchTerm] = useState(""); // State for the search term 

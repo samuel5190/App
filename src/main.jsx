@@ -12,9 +12,9 @@ const persistor = persistStore(store)
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
-      <persistGate persistor={persistor}>
+      <PersistGate persistor={persistor}>
         <App />
-      </persistGate>
+      </PersistGate>
     </Provider>
   </StrictMode>,
 )
