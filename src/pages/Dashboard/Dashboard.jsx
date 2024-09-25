@@ -490,7 +490,7 @@ const DashBoard = () => {
                   </div>
                 ))}
               </div>
-              <div className="details-container">
+              {/* <div className="details-container">
                 {selectedPerson && (
                   <div className="details">
                     <h2>{selectedPerson.name}</h2>
@@ -508,7 +508,7 @@ const DashBoard = () => {
                     </p>
                   </div>
                 )}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

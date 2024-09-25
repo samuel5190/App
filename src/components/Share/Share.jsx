@@ -7,6 +7,8 @@ import { PiPrinterThin } from "react-icons/pi";
 import 'animate.css';
 
 import { QRCodeSVG } from "qrcode.react";
+import { IoCheckmarkDoneOutline } from "react-icons/io5";
+import toast, { Toaster } from "react-hot-toast";
 
 const Share = ({setActiveComponent,setEv,ev,campaignData,Create,loading}) => {
   const Nav = useNavigate()
@@ -76,14 +78,21 @@ const Share = ({setActiveComponent,setEv,ev,campaignData,Create,loading}) => {
     link.download = "qrcode.svg";  
     link.click();  
   };  
+  const [buttonText, setButtonText] = useState(<BiCopy size={25} cursor="pointer"/>)
 
   
 
   const copyToClipboard = () => {
+    setButtonText(<IoCheckmarkDoneOutline color="green" size={25}/>)
+
+    setTimeout(() => {  
+      setButtonText(<BiCopy size={25} cursor="pointer"/>);  
+    }, 1000);
+
     navigator.clipboard
       .writeText(link)
       .then(() => {
-        alert("Link copied to clipboard!");
+        toast.success("Link copied to clipboard!");
       })
       .catch((err) => {
         console.error("Failed to copy: ", err);
@@ -135,7 +144,7 @@ const Share = ({setActiveComponent,setEv,ev,campaignData,Create,loading}) => {
                 readOnly
                 className="linkInput"
               />
-              <div onClick={copyToClipboard}><BiCopy size={25} cursor="pointer"/></div>
+              <div onClick={copyToClipboard}>{buttonText}</div>
             </div>
           </div>
         </div>
@@ -148,6 +157,7 @@ const Share = ({setActiveComponent,setEv,ev,campaignData,Create,loading}) => {
           }
         </button>
       </div>
+      <Toaster/>
     </div>
   );
 };
