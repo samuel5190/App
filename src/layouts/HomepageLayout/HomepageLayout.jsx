@@ -15,22 +15,22 @@ import './HomepageLayout.css';
 const HomepageLayout = () => {
   return (
     <div className='page-wrapper'>
-      <section className='landingpage-container'>
+    <section className='landingpage-container'>
       <Header />
       <Hero />
       <div className='not-coloured-nav'>
-      <PopularCampaigns />
-      <Fundraising />
-      <DonorEngagement />
-      <DonorOutreach />
-      <Solution />
-      <OurMission />
-      <StartFundraising />
-      <OurPartners />
-      <Footer />
+        <PopularCampaigns />
+        <Fundraising />
+        <DonorEngagement />
+        <DonorOutreach />
+        <Solution />
+        <OurMission />
+        <StartFundraising />
+        <OurPartners />
+        <Footer />
       </div>
     </section>
-    </div>
+  </div>
   );
 }
 
