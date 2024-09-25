@@ -17,43 +17,14 @@ const Header = () => {
   const {token} = useSelector((state)=>state.kindraise)
   // console.log(token,"user")
 
-  const handleHamburgerClick = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-  const handleLogo=()=>{   
-    if (token) {
-      navigate(-1)
-    } else {
-      navigate("/")
-    }
-  }
-  const proceed =()=>{
-    if (!token) {
-      navigate('/')
-    } else {
-      navigate('/dashboard')
-    }
-  }
+
+
 
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleResize = () => {
-    const mobileView = window.innerWidth <= 768;
-    setIsMobile(mobileView);
-    if (!mobileView) {
-      setIsOpen(false); // Close the menu on desktop view
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <header>
