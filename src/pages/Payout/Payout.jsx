@@ -2,9 +2,26 @@ import React, { useState } from 'react'
 import './Payout.css'
 import { BsBank } from "react-icons/bs";
 import PayoutModal from '../../components/PaymentModal/PaymentModal';
+import axios from 'axios';
 
 const Payout = () => {
   const [modal,setModal] = useState(false)
+
+  const send = () => {
+    // get()
+    const api = `https://kindraise.onrender.com/api/v1/donate/${datas?._id}`;
+    axios
+      .post(api, payment)
+      .then((res) => {
+        console.log(res);
+        // toast.success('payment received')
+        setPay(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error(err?.message)
+      });
+  };
   return (
     <div className='payoutBody'>
       {
