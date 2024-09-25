@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './AboutUs.css'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
@@ -8,6 +8,10 @@ import OurTeam from '../../components/OurTeam/OurTeam'
 
 
 const AboutUs = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
     <div className='about-container'>

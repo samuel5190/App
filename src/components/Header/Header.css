@@ -8,9 +8,10 @@
   height: 80px; 
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 40px;
+  border-radius: 20px;
   margin: 0 auto;
   margin: 20px auto 0;
+  overflow-x: hidden; 
 }
 
 .header-desktop {
@@ -29,168 +30,9 @@
   text-decoration: none;
   color: #333;
   font-size: 17px;
-}
+  cursor: pointer; /* Added cursor pointer for links 
+ } */
 
-.header-left a:hover,
-.header-right a:hover {
-  text-decoration: none; 
-  cursor: pointer;
-}
-
-.search-header-mobile {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.search-header-mobile span,
-.search-header-mobile svg {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-
-.header-center {
-  flex-grow: 1;
-  text-align: center;
-}
-
-.header-logo {
-  width: 160px; 
-}
-
-.signup-button {
-  padding: 10px 20px;
-  background-color: #05BB6D;
-  color: white !important;
-  border: none;
-  cursor: pointer;
-  font-family: Proxima Nova, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  text-align: center;
-  transition: background-color 0.3s ease;
-  border-radius: 8px; 
-}
-
-.signup-button:hover {
-  text-decoration: none;
-  background-color: #05CE78;
-}
-
-Mobile and Tablet Header 
-.header-mobile {
-  display: none; 
-}
-
-@media (max-width: 768px) {
-  .header-desktop {
-    display: none; 
-  }
-
-  .header-mobile {
-    display: flex; 
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    height: 80px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .search-icon {
-    width: 34px !important;
-    height: 34px !important;
-    font-size: 50px !important;
-    cursor: pointer; 
-  }
-
-  @media (min-width: 400px) {
-    .header-mobile {
-      display: flex; 
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-      height: 80px;
-      background-color: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    .header-mobile .search-header,
-    .header-mobile .header-logo,
-    .hamburger {
-      margin: 0 15px; 
-    }
-    
-    .header-logo {
-      width: 160px; 
-    }
-    
-    .search-header {
-      margin-right: 10px; 
-    }
-    
-    .hamburger {
-      margin-left: 10px; 
-      color: black;
-    }
-
-    .mobile-nav {
-      position: fixed; 
-      top: 0; 
-      right: -250px; 
-      width: 250px; 
-      height: 50%;
-      display: flex;
-      flex-direction: column; 
-      background-color: #fff; 
-      padding: 20px; 
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-      border-radius: 0 8px 8px 0; 
-      transition: all 0.3s ease; 
-      z-index: 1000;
-
-
-
-      display: flex; 
-  
-    }
-    
-    .mobile-nav.open {
-      right: 0;
-    }
-    
-    .mobile-nav a {
-      margin: 15px 0; 
-      text-decoration: none; 
-      color: #333; 
-      font-size: 18px;
-      text-align: left;
-      padding: 10px;
-      transition: color 0.3s ease; 
-    }
-    
-    .mobile-nav a:hover {
-      color: #05BB6D;
-    }
-    
-    .signup-button {
-      margin-top: auto; 
-      padding: 12px; 
-      background-color: #05BB6D; 
-      color: white; 
-      border: none; 
-      border-radius: 8px; 
-      text-align: center; 
-      font-size: 16px; 
-      transition: background-color 0.3s ease; 
-    }
-    
-    .signup-button:hover {
-      background-color: #05CE78; 
-    }
-  }    
-} */
 
 header {
   height: 150px;
@@ -299,6 +141,7 @@ header {
       z-index: 9999;
     }
   }
+
 }
 
 .mediaHead {

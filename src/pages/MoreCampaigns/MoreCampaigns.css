@@ -150,18 +150,19 @@
 .Mcampaigns-title {
     font-family: Proxima Nova, sans-serif;
     margin-bottom: 12px;
-    font-size: 22px;
+    font-size: 22.18px;
     font-weight: 700;
-    line-height: 1.5;
+    line-height: 33.27px;
     color: #3C4144;
 }
 
 .Mcampaigns-description {
-    font-size: 16px;
+    font-size: 16.25px;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 29.33px;
     color: #5C6062;
     font-family: Proxima Nova, sans-serif;
+    
 }
 
 .Mcampaigns-info p {

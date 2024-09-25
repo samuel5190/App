@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-.landingpage-container{
-    height: auto;
-    width: auto;
-}
-
 body {
     overflow: auto; 
   }
@@ -27,13 +22,15 @@ body {
     overflow-x: hidden; 
   }
   
-  .landingpage-container {
-    width: 100%;
+  .landingpage-container{
+    height: auto;
+    width: auto;
     overflow-x: auto; 
     box-sizing: border-box; 
     background-color: #E6FAF2 !important;
-
-  }
+    max-width: 100%;
+    box-sizing: border-box;
+    }
   
   .not-coloured-nav{
     background-color: white;

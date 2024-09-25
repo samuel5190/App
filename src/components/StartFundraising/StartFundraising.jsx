@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './StartFundraising.css';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS styles
+import 'aos/dist/aos.css'; 
 import { useNavigate } from 'react-router-dom';
 
 const StartFundraising = () => {
