@@ -10,30 +10,14 @@ import { BiMenu } from 'react-icons/bi';
 import { CgClose } from 'react-icons/cg';
 
 const Header = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
 
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const navigate = useNavigate();
   const { token } = useSelector((state) => state.kindraise);
 
-  const handleLogo = () => {   
-    if (token) {
-      navigate(-1);
-    } else {
-      navigate("/");
-    }
-  };
 
-  const proceed = () => {
-    if (!token) {
-      navigate('/');
-    } else {
-      navigate('/');
-    }
-  };
+
 
   const handleExploreCampaign = () => {
     navigate("/explore-campaigns"); 
@@ -43,34 +27,6 @@ const Header = () => {
     setIsOpen((prev) => !prev);
   };
 
-  const handleResize = () => {
-    const mobileView = window.innerWidth <= 768;
-    setIsMobile(mobileView);
-    if (!mobileView) {
-      setIsOpen(false); 
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  // Close menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (isOpen && !event.target.closest('.mobile-nav') && !event.target.closest('.hamburger')) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isOpen]);
 
   return (
     <header>
