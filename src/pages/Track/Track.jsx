@@ -8,6 +8,7 @@ import Transaction from '../../components/Transaction/Transaction'
 import Contacts from '../../components/Contacts/Contacts'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
+import toast from 'react-hot-toast'
 // import ProgressBar from '../components/ProgressBar/ProgressBar'
 
 const Track = () => {
@@ -34,8 +35,9 @@ const Track = () => {
         setPersons(res?.data?.donations)
       })
       .catch((err)=>{
-        console.log(err?.message, "all")
-        toast.error(err?.message)
+        console.log(err)
+        // console.log(err?.response?.data?.message, "all")
+        // toast.error(err?.message)
       })
   },[])
 

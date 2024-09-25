@@ -145,7 +145,7 @@ const DashBoard = () => {
         setLoading(false);
       }catch(err){
         console.log(err)
-        toast.error(err?.message)
+        // toast.error(err?.message)
         setLoading(false); // Data has finished loading even on error
       };
   }
