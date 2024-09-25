@@ -19,8 +19,10 @@ const PopularCampaigns = () => {
         const fetchCampaigns = async () => {
             try {
                 const response = await axios.get('https://kindraise.onrender.com/api/v1/getallcampaigns');
-                setCampaigns(response.data.allCampaigns.slice(0, 3)); // Limit to 3 campaigns
+                console.log(response, "data");
+                setCampaigns(response.data.campaigns.slice(0, 3)); // Limit to 3 campaigns
             } catch (error) {
+                console.log(error)
                 setErr(error.message);
             } finally {
                 setLoading(false);

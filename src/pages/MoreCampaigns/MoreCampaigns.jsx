@@ -39,9 +39,9 @@ const MoreCampaigns = () => {
     axios  
       .get(url)  
       .then((res) => {  
-        console.log(res?.data?.allCampaigns)
-        console.log(res?.data?.allCampaigns, "all campaigns");  
-        setCampaigns(res?.data?.allCampaigns);  
+        console.log(res?.data?.campaigns)
+        console.log(res?.data?.campaigns, "all campaigns");  
+        setCampaigns(res?.data?.campaigns);  
         setLoading(false);
         // dispatch(allCampaigns(res?.data?.allCampaigns));  
       })  
