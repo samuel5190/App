@@ -125,6 +125,7 @@ header {
   .headWrapper {
     box-shadow: none;
     width: 100%;
+    background-color: transparent;
 
     .headCampBox {
       display: none;
