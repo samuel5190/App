@@ -14,7 +14,8 @@ import './HomepageLayout.css';
 
 const HomepageLayout = () => {
   return (
-    <section className='landingpage-container'>
+    <div className='page-wrapper'>
+      <section className='landingpage-container'>
       <Header />
       <Hero />
       <div className='not-coloured-nav'>
@@ -28,8 +29,8 @@ const HomepageLayout = () => {
       <OurPartners />
       <Footer />
       </div>
-
     </section>
+    </div>
   );
 }
 

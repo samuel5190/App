@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import './ContactUs.css';
@@ -11,6 +11,10 @@ const ContactUs = () => {
     const sendMail = () => {
         window.location.href = 'mailto:contact@kindraise.com';
     };
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
     return (
         <>

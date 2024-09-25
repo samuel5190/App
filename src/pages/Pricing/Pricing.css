@@ -122,11 +122,9 @@
         padding-left: 30px;
         line-height: 40.23px;
         color: #5C6062;
-        margin-bottom: 40%;
+        margin-bottom: 10%;
       }
-      
-  
-  
+
   
   @media (max-width: 768px) {
     .pricing-container {
