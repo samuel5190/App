@@ -150,10 +150,7 @@ const FundraisingPage = () => {
             setPay={setPay}
           />
         )}
-
-        <div className="fund-head">
-          <Header />
-        </div>
+        <Header />
         <div className="fundRaiseTitleBox">
           <h2>{loading ? "..." : <>{datas?.title}</>}</h2>
           <div>{loading ? "..." : <>{datas?.subtitle}</>}</div>

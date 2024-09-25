@@ -1,55 +1,43 @@
 import React, { useState, useEffect } from 'react'; 
 import { useNavigate } from 'react-router-dom';
-import Period from '../../assets/period.png';
-import WaterSupply from '../../assets/water-supply.png';
-import BackToSchool from '../../assets/back-to-school.png';
 import './PopularCampaigns.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
-
-const campaigns = [
-    {
-        id: 1,
-        image: BackToSchool,
-        title: 'Sponsor 5 Children in Nigeria Get Back to School',
-        description: 'Hi, I’m Noor, and I started SchoolFund to provide education to children who...',
-        donors: 71,
-        raised: 100450,
-        funded: 65
-    },
-    {
-        id: 2,
-        image: WaterSupply,
-        title: 'Bring Clean Water to Rural Communities in Lagos',
-        description: 'Greetings! I’m Lola Badmus, working with WaterNow to provide clean water in...',
-        donors: 44,
-        raised: 75400,
-        funded: 80
-    },
-    {
-        id: 3,
-        image: Period,
-        title: 'Menstrual Hygiene Support for Orphanages & Girls',
-        description: 'PeriodPals is sponsoring menstrual kits for girls to keep them comfortable..',
-        donors: 120,
-        raised: 200000,
-        funded: 90
-    }
-];
+import axios from 'axios';
 
 const PopularCampaigns = () => {
+    const [campaigns, setCampaigns] = useState([]);  
+    const [loading, setLoading] = useState(true);
+    const [err, setErr] = useState('');
     const navigate = useNavigate();
-
-    const handleClick = () => {
-        navigate('/explore-campaigns'); 
-    };
-    
 
     useEffect(() => {
         AOS.init({
             duration: 2000,
         });
+
+        const fetchCampaigns = async () => {
+            try {
+                const response = await axios.get('https://kindraise.onrender.com/api/v1/getallcampaigns');
+                setCampaigns(response.data.allCampaigns.slice(0, 3)); // Limit to 3 campaigns
+            } catch (error) {
+                setErr(error.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchCampaigns();
     }, []);
+
+    const handleCampaignClick = (campaignId) => {
+        // Navigate to the fundraising page for the clicked campaign
+        navigate(`/fundraising/${campaignId}`);
+    };
+
+    const handleExploreClick = () => {
+        navigate('/explore-campaigns'); 
+    };
 
     return (
         <section className='popular-campaigns'>
@@ -58,24 +46,35 @@ const PopularCampaigns = () => {
                 <p>Driven by what matters to you</p>
             </div>
             <div className='campaigns-list'>
-                {campaigns.map((campaign) => (
-                    <div className='campaign-card' key={campaign.id} data-aos="fade-up"> 
-                        <img src={campaign.image} alt={campaign.title} className='campaign-image' />        
-                        <div className='campaign-details'>
-                            <h2 className='campaign-title'>{campaign.title}</h2>
-                            <p className='campaign-description'>{campaign.description}</p>
-                            <p className='campaign-donors'>{campaign.donors} Donors</p>
-                            <progress className='campaign-progress' value={campaign.funded} max="100"></progress>
-                            <div className='campaign-stats'>
-                                <p className='campaign-raised'>₦{campaign.raised.toLocaleString()} raised</p>
-                                <p className='campaign-funded'>{campaign.funded}% funded</p>
+                {loading ? (
+                    <p>Loading campaigns...</p>
+                ) : err ? (
+                    <p>{err}</p>
+                ) : (
+                    campaigns.map((campaign) => (
+                        <div 
+                            className='campaign-card' 
+                            key={campaign.id} 
+                            data-aos="fade-up" 
+                            style={{ cursor: 'pointer' }} 
+                            onClick={() => navigate(`/fundraising-page/${campaign.ev}`)}> 
+                            <img src={campaign.profilePic} alt={campaign.title} className='campaign-image' />        
+                            <div className='campaign-details'>
+                                <h2 className='campaign-title'>{campaign.title}</h2>
+                                <p className='campaign-description'>{campaign.subtitle}</p>
+                                <p className='campaign-donors'>{campaign.supporters} Donors</p>
+                                <progress className='campaign-progress' value={campaign.totalRaised} max={campaign.Goal}></progress>
+                                <div className='campaign-stats'>
+                                    <p className='campaign-raised'>₦{campaign.totalRaised.toLocaleString()} raised</p>
+                                    <p className='campaign-funded'>{((campaign.totalRaised / campaign.Goal) * 100).toFixed(0)}% funded</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    ))
+                )}
             </div>
             <div className="explore-button-container" data-aos="zoom-in">
-                <button onClick={handleClick} className="explore-button">Explore Campaigns</button>
+                <button onClick={handleExploreClick} className="explore-button">Explore Campaigns</button>
             </div>
         </section>
     );
