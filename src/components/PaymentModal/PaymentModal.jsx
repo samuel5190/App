@@ -31,11 +31,15 @@ const PayoutModal = ({setModal}) => {
         console.log(res)
        setLoading(false)
        setModal(false)
-       toast.success("successfully send")
+       setTimeout(() => {
+         toast.success(res?.data?.message)
+       }, 2000);
       })
       .catch((err)=>{
         console.log(err)
         setLoading(false)
+        setModal(false)
+        toast.error(err?.response?.data?.message)
 
       })
     // alert('Error')
