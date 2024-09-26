@@ -18,7 +18,7 @@ import { QRCodeSVG } from "qrcode.react";
 
 const FundraisingPage = () => {
   const { id } = useParams();
-  console.log(id, "id");
+  // console.log(id, "id");
   const Nav = useNavigate();
 
   const [campaign, setCampaign] = useState(null);
@@ -34,6 +34,7 @@ const FundraisingPage = () => {
   const [datas, setDatas] = useState(null);
   const [toggles, setToggles] = useState(false);
   const [show, setShow] = useState(false);
+  const [donors, setDonors] = useState(null)
 
   const payment = {
     amount: amount,
@@ -43,7 +44,7 @@ const FundraisingPage = () => {
     message,
   };
 
-  console.log(payment);
+  // console.log(payment);
 
   const dispatch = useDispatch();
   const main = useSelector((state) => state.kindraise.allCampaigns);
@@ -55,12 +56,17 @@ const FundraisingPage = () => {
       .get(url)
       .then((res) => {
         setOneData(res?.data?.campaigns);
-        console.log(oneData, "one");
+        console.log(res, "res");
         const nae = res?.data?.campaigns.filter((data) => data.ev == id);
-        console.log(nae);
-        console.log(nae[0], "nae");
+        // console.log(nae);
+        // console.log(nae[0], "nae");
+        // console.log(datas);
         setDatas(nae[0]);
-        console.log(datas);
+        console.log(nae[0]?.donations, "donor")
+        // console.log(donors, "donor");
+        // console.log(datas?.donations[0], "donor")
+        setDonors(nae[0]?.donations)
+        const done = datas?.donations[0]
         setLoading(false);
       })
       .catch((err) => {
@@ -72,7 +78,7 @@ const FundraisingPage = () => {
 
   const send = () => {
     // get()
-    const api = `https://kindraise.onrender.com/api/v1/donate/${datas?.id}`;
+    const api = `https://kindraise.onrender.com/api/v1/donate/${datas?._id}`;
     axios
       .post(api, payment)
       .then((res) => {
@@ -122,10 +128,10 @@ const FundraisingPage = () => {
   }, []);
 
   const donor = [
-    { name: "Anonymous", date: "02/01/2024", amount: "10,000" },
-    { name: "Chidi Benson", date: "02/01/2024", amount: "20,000" },
-    { name: "Jack Samuel", date: "02/01/2024", amount: "2,000" },
-    { name: "Lucy Eze", date: "02/01/2024", amount: "15,000" },
+    { name: "Anonymous", donationDate: "02/01/2024", amount: "10,000" },
+    { name: "Chidi Benson", donationDate: "02/01/2024", amount: "20,000" },
+    { name: "Jack Samuel", donationDate: "02/01/2024", amount: "2,000" },
+    { name: "Lucy Eze", donationDate: "02/01/2024", amount: "15,000" },
   ];
 
   const current = datas ? datas.currentAmount : 0;
@@ -257,15 +263,16 @@ const FundraisingPage = () => {
               <div className="fundRaiseDonorBox">
                 <h2>Donors</h2>
                 <div className="fundDonorWrapper">
-                  {donor.map((e, index) => (
-                    <div key={index} className="fundDonor">
+                  {donors?.map((e, index) => (
+                    <div
+                     key={index} className="fundDonor">
                       <div className="fundRaiseNameBox">
                         <div className="fundRaiseIconBox">
                           <img src={Icon} alt="" />
                         </div>
                         <div className="fundRaiseName">
                           <div className="fundRaiseUserName">{e.name}</div>
-                          <div className="fundRaiseUserdate">{e.date}</div>
+                          <div className="fundRaiseUserdate">{e.donationDate}</div>
                         </div>
                       </div>
                       <div className="fundRaiseAmountBox">₦{e.amount}</div>
