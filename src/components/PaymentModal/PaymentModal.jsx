@@ -3,12 +3,14 @@ import './PaymentModal.css'
 import { MdClose } from 'react-icons/md'
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import toast from 'react-hot-toast';
 
 const PayoutModal = ({setModal}) => {
   const [BankName, setBank] = useState('')
   const [accountNumber, setAccount] = useState(0)
   const [beneficiaryName, setName] = useState('')
   const [amount, setAmount] = useState('')
+  const [loading, setLoading] = useState(false)
   const data = {
     BankName,
     accountNumber,
@@ -22,14 +24,18 @@ const PayoutModal = ({setModal}) => {
 
   const sendBank = ()=>{
     const url = `https://kindraise.onrender.com/api/v1/payout`
+    setLoading(true)
     axios
       .post(url, data, {headers: { Authorization: `Bearer: ${token}` }}) 
       .then((res)=>{
         console.log(res)
-       
+       setLoading(false)
+       setModal(false)
+       toast.success("successfully send")
       })
       .catch((err)=>{
         console.log(err)
+        setLoading(false)
 
       })
     // alert('Error')
@@ -91,7 +97,7 @@ const PayoutModal = ({setModal}) => {
           </div>
         </div>
         <div className='payoutModalBtnBox'>
-          <button onClick={sendBank}>Save</button>
+          <button onClick={sendBank}>{loading ? "semding": "save"}</button>
         </div>
       </div>
     </div>

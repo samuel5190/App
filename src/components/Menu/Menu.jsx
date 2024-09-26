@@ -18,7 +18,7 @@ const Menu = ({setShow}) => {
           <ul>
             <li onClick={()=>Nav('/dashboard')[setShow(false)]}>Dashboard</li>
             <li onClick={()=>Nav('/campaign')[setShow(false)]}>Raise</li>
-            <li onClick={()=>Nav('/donor')[setShow(false)]}>Donor</li>
+            <li onClick={()=>Nav('/track')[setShow(false)]}>Donor</li>
             <li onClick={()=>Nav('/payout')[setShow(false)]}>Payout</li>
             <li onClick={()=>Nav('/account')[setShow(false)]}>Account</li>
             <li onClick={()=>Nav('/signup')[setShow(false)]} className='logoutMenu'>Logout</li>
