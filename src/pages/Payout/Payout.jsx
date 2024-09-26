@@ -9,20 +9,20 @@ const Payout = () => {
   const [modal,setModal] = useState(false)
   const token = useSelector((state) => state.kindraise.token);
 
-  const sendBank = ()=>{
-    const url = `https://kindraise.onrender.com/api/v1/send-message/${id}`
-    axios
-      .post(url, {message}, {headers: { Authorization: `Bearer: ${token}` }}) 
-      .then((res)=>{
-        console.log(res)
+  // const sendBank = ()=>{
+  //   const url = `https://kindraise.onrender.com/api/v1/send-message/${id}`
+  //   axios
+  //     .post(url, {message}, {headers: { Authorization:j `Bearer: ${token}` }}) 
+  //     .then((res)=>{
+  //       console.log(res)
        
-      })
-      .catch((err)=>{
-        console.log(err)
+  //     })
+  //     .catch((err)=>{
+  //       console.log(err)
 
-      })
-    // alert('Error')
-  }
+  //     })
+  //   // alert('Error')
+  // }
 
 
   return (
@@ -44,14 +44,14 @@ const Payout = () => {
             </div>
           </div>
           <div className='payoutWidDetails'>
-            <div className='norBal'>Balance: ₦100,000</div>
-            <div className='WithBal'>withdrawable Balance: ₦100,000</div>
-            <button className='withdraBtn'>My transaction</button>
+            {/* <div className='norBal'>Balance: ₦100,000</div> */}
+            {/* <div className='WithBal'>withdrawable Balance: ₦100,000</div> */}
+            {/* <button className='withdraBtn'>My transaction</button> */}
           </div>
         </div>
-        <div className='payoutTableBox'>
+        {/* <div className='payoutTableBox'>
           hi
-        </div>
+        </div> */}
       </div>
     </div>
   )

@@ -243,6 +243,15 @@
   max-width: 300px;
   width: 100%;
   /* background-color: aqua; */
+  /* white-space: nowrap; */
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
+
+  overflow: hidden; /* Hide overflow */  
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */  
+    display: -webkit-box; /* Use flexbox for truncation */  
+    -webkit-box-orient: vertical; /* Set orientation */  
+    -webkit-line-clamp: 5; /* Number of lines to show before truncating */  
 }
 
 .trackBar {
