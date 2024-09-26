@@ -3,25 +3,28 @@ import './Payout.css'
 import { BsBank } from "react-icons/bs";
 import PayoutModal from '../../components/PaymentModal/PaymentModal';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 const Payout = () => {
   const [modal,setModal] = useState(false)
+  const token = useSelector((state) => state.kindraise.token);
 
-  const send = () => {
-    // get()
-    const api = `https://kindraise.onrender.com/api/v1/donate/${datas?._id}`;
+  const sendBank = ()=>{
+    const url = `https://kindraise.onrender.com/api/v1/send-message/${id}`
     axios
-      .post(api, payment)
-      .then((res) => {
-        console.log(res);
-        // toast.success('payment received')
-        setPay(false);
+      .post(url, {message}, {headers: { Authorization: `Bearer: ${token}` }}) 
+      .then((res)=>{
+        console.log(res)
+       
       })
-      .catch((err) => {
-        console.log(err);
-        toast.error(err?.message)
-      });
-  };
+      .catch((err)=>{
+        console.log(err)
+
+      })
+    // alert('Error')
+  }
+
+
   return (
     <div className='payoutBody'>
       {
