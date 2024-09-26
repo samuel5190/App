@@ -11,7 +11,7 @@ const PaymentDetails = ({payKorapay,setEmail,setPay,setName,setMessage}) => {
         <div onClick={()=>setPay(false)}>X</div>
       </div>
       <div className='payDetailsWrapper'>
-        <h4>Add a Publice Message</h4>
+        <h4>Add a Public Message</h4>
         <input type="text" placeholder='Name(optional)' onChange={(e)=>setName(e.target.value)}/>
         <input type="text" placeholder='email' onChange={(e)=>setEmail(e.target.value.toLowerCase())}/>
         <textarea name="" id="" placeholder='Message' onChange={(e)=>setMessage(e.target.value)}/>
