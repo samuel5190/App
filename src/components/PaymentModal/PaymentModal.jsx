@@ -3,7 +3,7 @@ import './PaymentModal.css'
 import { MdClose } from 'react-icons/md'
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 const PayoutModal = ({setModal}) => {
   const [BankName, setBank] = useState('')
@@ -97,9 +97,10 @@ const PayoutModal = ({setModal}) => {
           </div>
         </div>
         <div className='payoutModalBtnBox'>
-          <button onClick={sendBank}>{loading ? "semding": "save"}</button>
+          <button onClick={sendBank}>{loading ? "sending": "save"}</button>
         </div>
       </div>
+      <Toaster/>
     </div>
   )
 }
