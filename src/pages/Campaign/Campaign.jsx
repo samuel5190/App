@@ -49,7 +49,7 @@ const Campaign = () => {
   // Search function to filter campaigns based on searchTerm and selectedStatus  
   useEffect(() => {  
     const filtered = campaigns.filter((campaign) => {  
-      const matchesSearch = campaign.story.toLowerCase().includes(searchTerm.toLowerCase());  
+      const matchesSearch = campaign.title.toLowerCase().includes(searchTerm.toLowerCase());  
       const matchesStatus = selectedStatus ? campaign.status === selectedStatus : true; // Filter by status if selected  
       return matchesSearch && matchesStatus;  
     });  
@@ -61,7 +61,7 @@ const Campaign = () => {
 
   // Configure table columns  
   const columns = React.useMemo(() => [  
-    { Header: "Campaign", accessor: "story" },  
+    { Header: "Campaign", accessor: "title" },  
     { Header: "Created", accessor: "createdAt" },  
     { Header: "Raised", accessor: "totalRaised" },  
     { Header: "Supporters", accessor: "supporters" },  
